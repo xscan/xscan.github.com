@@ -1,0 +1,42 @@
+---
+layout: post
+title: "php读取sql数据库中的值"
+---
+{{ page.title}}
+
+{% highlight php %}
+<?php
+
+$con = mysql_connect('localhost', 'root', '6');//数据库连接，第一个为数据库ip，二为用户名，三为密码。
+if (!$con)判断数据库是否连接成功
+ {
+ die('Could not connect: ' . mysql_error());
+ }
+
+mysql_select_db("stu", $con);//选择数据库
+
+$sql="SELECT * FROM stu_info ";//定义sql语句
+
+$result = mysql_query($sql);//执行sql语句
+
+echo "<table border='1'>//定义显示格式
+<tr>
+<th>name</th>
+<th>age</th>
+<th>tel</th>
+
+</tr>";
+
+while($row = mysql_fetch_array($result))//循环读取值,判断是否到尾
+ {
+ echo "<tr>";
+ echo "<td>" . $row['name'] . "</td>";
+ echo "<td>" . $row['age'] . "</td>";
+ echo "<td>" . $row['tel'] . "</td>";
+ echo "</tr>";
+ }
+echo "</table>";
+
+mysql_close($con);//关闭数据库
+?>
+{% endhighlight %}
