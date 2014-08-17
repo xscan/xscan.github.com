@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+
+    <title>python socket tcp简单实例</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  </head>
+  <body>
+    <aside id="sidebar">
+      <nav id="tags">
+        <a href="/index.html" id="avatar"></a>
+
+        <ul id="tags__ul">
+          <li id="js-label1" class="tags__li tags-btn active">All Posts</li>
+          <li id="js-label2" class="tags__li tags-btn">Home</li>
+          <li id="js-label3" class="tags__li tags-btn">Html5<li>
+          <li id="js-label4" class="tags__li tags-btn">-</li>
+          <li id="js-label5" class="tags__li tags-btn">--</li>
+          <li id="js-label6" class="tags__li tags-btn">---</li>
+        </ul>
+
+        <div id="tags__bottom">
+          <a href="mailto:place_your_email_address_here" id="icon-email" class="tags-btn fontello"></a>
+          <a href="/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+        </div>
+      </nav> <!-- end #tags -->
+
+      <div id="posts-list">
+        <form action="" id="search-form">
+          <a href="/index.html" id="mobile-avatar"></a>
+          <!-- NOTE: input field is disabled by default -->
+          <input id="search-input" type="text" placeholder="Search..." disabled >
+        </form>
+
+        <nav id="pl__container">
+        
+          <a class=" pl__all" href="/2014/08/17/phpmysql.html"><span class="pl__circle"></span><span class="pl__title">php读取sql数据库中的值</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/17/html5canvas.html"><span class="pl__circle"></span><span class="pl__title">HTML5 Canvas 画心</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="home pl__all" href="/home/2014/08/17/home.html"><span class="pl__circle"></span><span class="pl__title">搭建blog的路</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/16/html5%20HE.html"><span class="pl__circle"></span><span class="pl__title">MARKDOWN</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/16/html5.html"><span class="pl__circle"></span><span class="pl__title">html5 事件监听</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/15/html5hy.html"><span class="pl__circle"></span><span class="pl__title">css3 火焰字</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class=" pl__all" href="/2014/08/15/1.html"><span class="pl__circle"></span><span class="pl__title">python socket tcp简单实例</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="home pl__all" href="/home/2014/08/13/welcome-to-jekyll.html"><span class="pl__circle"></span><span class="pl__title">关于我</span><span class="pl__date">Aug 2014</span></a>
+        
+        </nav>
+      </div> <!-- end #posts-list -->
+    </aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <div id="pjax">
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="20140815">python socket tcp简单实例</h1>
+  <p>python socket tcp简单实例</p>
+
+<p>服务端：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/python</span>
+    <span class="kn">import</span> <span class="nn">socket</span>  <span class="o">//</span><span class="err">导入</span><span class="n">socket</span><span class="err">库</span>
+    <span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>  <span class="o">//</span><span class="err">定义</span><span class="n">socket</span><span class="err">的交互方式</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">bind</span><span class="p">((</span><span class="s">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">8001</span><span class="p">))</span>  <span class="o">//</span><span class="err">绑定</span><span class="n">ip</span><span class="err">地址和端口</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">listen</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="o">//</span><span class="err">设置客户端连接数量</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span> 
+        <span class="n">connection</span><span class="p">,</span><span class="n">address</span> <span class="o">=</span> <span class="n">sock</span><span class="o">.</span><span class="n">accept</span><span class="p">()</span>  <span class="o">//</span><span class="err">监听客户端连接</span>
+        <span class="k">try</span><span class="p">:</span>  
+            <span class="n">connection</span><span class="o">.</span><span class="n">settimeout</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  
+            <span class="n">buf</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>  <span class="o">//</span><span class="err">接受客户端数据</span>
+            <span class="k">if</span> <span class="n">buf</span> <span class="o">==</span> <span class="s">&#39;1&#39;</span><span class="p">:</span>  
+                <span class="n">connection</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s">&#39;welcome to server!&#39;</span><span class="p">)</span>  <span class="err">返回给客户端数据</span>
+            <span class="k">else</span><span class="p">:</span>  
+                <span class="n">connection</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s">&#39;please go out!&#39;</span><span class="p">)</span>  
+        <span class="k">except</span> <span class="n">socket</span><span class="o">.</span><span class="n">timeout</span><span class="p">:</span>  
+            <span class="k">print</span> <span class="s">&#39;time out&#39;</span>  
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>  <span class="o">//</span><span class="err">关闭与客户端连接</span></code></pre></div>
+
+<p>客户端：</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c">#!/usr/bin/python </span>
+        <span class="kn">import</span> <span class="nn">socket</span>  
+		<span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="o">.</span><span class="n">socket</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">AF_INET</span><span class="p">,</span> <span class="n">socket</span><span class="o">.</span><span class="n">SOCK_STREAM</span><span class="p">)</span>  
+		<span class="n">sock</span><span class="o">.</span><span class="n">connect</span><span class="p">((</span><span class="s">&#39;localhost&#39;</span><span class="p">,</span> <span class="mi">8001</span><span class="p">))</span>  
+		<span class="kn">import</span> <span class="nn">time</span>  
+		<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+		<span class="n">sock</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s">&#39;1&#39;</span><span class="p">)</span>  
+		<span class="k">print</span> <span class="n">sock</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+		<span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></code></pre></div>
+
+
+</article> <!-- end #post__content -->
+
+<div id="post__share">
+  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/2014/08/15/1.html&text=python socket tcp简单实例" target="_blank"></a>
+  <a id="icon-cc" class="fontello" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
+  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/2014/08/15/1.html&title=python socket tcp简单实例" target="_blank"></a>
+</div> <!-- end #post__share -->
+
+<div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink" target="_blank">Loading Disqus comments...</a>
+</div> <!-- end #disqus_thread -->
+
+<p id="copyright">Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Theme <a href="https://github.com/P233/3-Jekyll" target="_blank">3-Jekyll</a></p>
+      </div> <!-- end #pjax -->
+
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">Table of Contents</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div> <!-- end #post -->
+
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/jquery.pjax.js"></script>
+    <script src="/assets/js/nprogress.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>
