@@ -6,9 +6,110 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Sun, 17 Aug 2014 18:49:49 +0800</pubDate>
-    <lastBuildDate>Sun, 17 Aug 2014 18:49:49 +0800</lastBuildDate>
+    <pubDate>Sun, 05 Oct 2014 19:55:22 +0800</pubDate>
+    <lastBuildDate>Sun, 05 Oct 2014 19:55:22 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>delphi作业</title>
+      <link>place_your_blog_url_here/home/2014/10/05/delphi.html</link>
+      <pubDate>05 Oct 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/home/2014/10/05/delphi</guid>
+      <description>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;“真正的程序员用VC，聪明的程序员用Delphi”，这句话是对Delphi最经典、最实在的描述。Delphi被称为第四代编程语言，它具有简单、高效、功能强大的特点。和VC相比，Delphi更简单、更易于掌握，而在功能上却丝毫不逊色；和VB相比，Delphi则功能更强大、更实用。可以说Delphi同时兼备了VC功能强大和VB简单易学的特点。它一直是程序员至爱的编程工具。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Delphi具有以下的特性：基于窗体和面向对象的方法，高速的编译器，强大的数据库支持，与Windows编程紧密结合，强大而成熟的组件技术。但最重要的还是Object Pascal语言，它才是一切的根本。Object Pascal语言是在Pascal语言的基础上发展起来的，简单易学。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;delphihttpwwwworlduccomspaceshowindexaspxuid1008546&quot;&gt;&lt;a href=&quot;http://www.worlduc.com/SpaceShow/Index.aspx?uid=1008546&quot;&gt;大学城delphi作业链接&lt;/a&gt;&lt;/h3&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>9月经历</title>
+      <link>place_your_blog_url_here/home/2014/10/05/9yue.html</link>
+      <pubDate>05 Oct 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/home/2014/10/05/9yue</guid>
+      <description>&lt;h2 id=&quot;section&quot;&gt;大三了，时间一恍惚就过去了。&lt;/h2&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;今天中午到我妹这里吃饭感觉他们还是没什么变化的。一样的天真。菜还是那种味道。&lt;/h2&gt;
+
+&lt;h2 id=&quot;go-go&quot;&gt;到底应该追求什么东西呢！目标！Go Go&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>css3学习历程</title>
+      <link>place_your_blog_url_here/html5/2014/08/18/html5css3xx.html</link>
+      <pubDate>18 Aug 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/html5/2014/08/18/html5css3xx</guid>
+      <description>&lt;p&gt;css3学习历程
+#最近发现css3逐渐强大了。还支持动画、和圆角的属性。
+##1.圆角（直接上例子）
+##代码如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt; 
+&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2px&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#a1a1a1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; 
+&lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#dddddd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;350px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;25px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;border&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radius&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;25px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* 老的 Firefox */&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&lt;/span&gt;border-radius 属性允许您向元素添加圆角。&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;2.边框阴影&lt;/h2&gt;
+&lt;p&gt;##代码如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;style&amp;gt;&lt;/span&gt; 
+&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;300px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;background-color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;#ff9900&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;moz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#888888&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/* 老的 Firefox */&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;box&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;5px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#888888&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;css3html5&quot;&gt;一些css3+html5的教程和链接&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.w3school.com.cn/&quot;&gt;w3c在线教程&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.zi-han.net/css3/&quot;&gt;css3在线圆角div生成器&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.lanrenzhijia.com/js/css3/&quot;&gt;懒人之家css3特效&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://ecd.tencent.com/css3/tools.html&quot;&gt;css3动画工具Tool&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bootcss.com/&quot;&gt;Bootstrap简洁、直观、强悍的前端开发框架&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://zaole.net/&quot;&gt;css3+html5在线实例&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>php读取sql数据库中的值</title>
@@ -179,6 +280,83 @@ http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html
       <author>place_your_name_here</author>
       <guid>place_your_blog_url_here/html5/2014/08/16/html5</guid>
       <description>&lt;p&gt;html5 事件监听&lt;/p&gt;
+&lt;html&gt;
+	&lt;head&gt;
+		&lt;title&gt;方框移动，事件监听&lt;/title&gt;
+		&lt;meta charset=&quot;utf-8&quot; /&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			// &lt;![CDATA[
+			//window.add
+			window.onload = function() {
+				document.body.addEventListener(&quot;keydown&quot;, onkey, false);
+				//建立一个键盘监听
+				// Window.addEventListener(&quot;keydown&quot;,onkey,false);
+				xs();
+			}
+			function xs()//画矩形
+			{
+				var c = document.getElementById(&quot;map&quot;);
+				var cxt = c.getContext(&quot;2d&quot;);
+				cxt.fillStyle = &quot;#996633&quot;;
+				x = c.width / 2;
+				y = c.height / 2;
+				cxt.fillRect(x, y, 100, 100);
+				//cxt.translate(100, 100);
+			
+			}
+
+			function qc() {//清空画布
+				var c = document.getElementById(&quot;map&quot;);
+				var cxt = c.getContext(&quot;2d&quot;);
+				cxt.clearRect(0, 0, 500, 500);
+			}
+
+			function onkey(e) {
+				if (e.keyCode == 37) {
+					//alert(&quot;左&quot;);
+					qc();
+					x = x - 10;
+					var c = document.getElementById(&quot;map&quot;);
+					var cxt = c.getContext(&quot;2d&quot;);
+					cxt.fillStyle = &quot;#996633&quot;;
+					cxt.fillRect(x, y, 100, 100);
+				}
+				if (e.keyCode == 38) {
+					//alert(&quot;上&quot;);
+					qc();
+					y = y - 10;
+					var c = document.getElementById(&quot;map&quot;);
+					var cxt = c.getContext(&quot;2d&quot;);
+					cxt.fillStyle = &quot;#996633&quot;;
+					cxt.fillRect(x, y, 100, 100);
+				}
+				if (e.keyCode == 39) {
+					//alert(&quot;右&quot;);
+					qc();
+					x = x + 10;
+					var c = document.getElementById(&quot;map&quot;);
+					var cxt = c.getContext(&quot;2d&quot;);
+					cxt.fillStyle = &quot;#996633&quot;;
+					cxt.fillRect(x, y, 100, 100);
+				}
+				if (e.keyCode == 40) {
+					//alert(&quot;下&quot;);
+					qc();
+					y = y + 10;
+					var c = document.getElementById(&quot;map&quot;);
+					var cxt = c.getContext(&quot;2d&quot;);
+					cxt.fillStyle = &quot;#996633&quot;;
+					cxt.fillRect(x, y, 100, 100);
+				}
+			}
+
+		&lt;/script&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;canvas id=&quot;map&quot; width=&quot;500&quot; height=&quot;300&quot; style=&quot;border:1px solid #c3c3c3;&quot;&gt;&lt;/canvas&gt;
+		&lt;strong&gt;按上下左右控制方框移动&lt;/strong&gt;
+	&lt;/body&gt;
+ 	&lt;/html&gt;
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
 	&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
@@ -268,9 +446,6 @@ http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html
       <author>place_your_name_here</author>
       <guid>place_your_blog_url_here/html5/2014/08/15/html5hy</guid>
       <description>&lt;p&gt;css3 火焰字&lt;/p&gt;
-
-&lt;p&gt;火焰字html代码：&lt;/p&gt;
-
 &lt;html&gt;
 	&lt;head&gt;
 		&lt;meta charset=&quot;utf-8&quot; /&gt;
@@ -293,6 +468,30 @@ body {background:black; }
 		&lt;h1 id=&quot;fire&quot;&gt;爱你的&lt;/h1&gt;
 	&lt;/body&gt;
 &lt;/html&gt;
+&lt;p&gt;火焰字html代码：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;style &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/css&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nf&quot;&gt;#fire&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;text-align&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;center&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100px&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;auto&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;font-family&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Comic Sans MS&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;80px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;white&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;text-shadow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#fefcc9&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;30px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#feec85&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-20px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-20px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;40px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ffae34&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;20px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-40px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;50px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ec760c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-20px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-60px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;60px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#cd4606&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-80px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;70px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#973716&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;10px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-90px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;80px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#451b0e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;black&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;fire&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;爱你的&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
     </item>
@@ -336,20 +535,6 @@ body {background:black; }
 		&lt;span class=&quot;n&quot;&gt;sock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;1&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  
 		&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;recv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1024&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;sock&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-    </item>
-    
-    <item>
-      <title>关于我</title>
-      <link>place_your_blog_url_here/home/2014/08/13/welcome-to-jekyll.html</link>
-      <pubDate>13 Aug 2014</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/home/2014/08/13/welcome-to-jekyll</guid>
-      <description>&lt;p&gt;关于我&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt; 敬请期待!
-&lt;/code&gt;&lt;/pre&gt;
 
 </description>
     </item>

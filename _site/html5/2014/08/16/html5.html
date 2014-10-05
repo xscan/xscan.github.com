@@ -39,6 +39,12 @@
 
         <nav id="pl__container">
         
+          <a class="home pl__all" href="/home/2014/10/05/delphi.html"><span class="pl__circle"></span><span class="pl__title">delphi作业</span><span class="pl__date">Oct 2014</span></a>
+        
+          <a class="home pl__all" href="/home/2014/10/05/9yue.html"><span class="pl__circle"></span><span class="pl__title">9月经历</span><span class="pl__date">Oct 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/18/html5css3xx.html"><span class="pl__circle"></span><span class="pl__title">css3学习历程</span><span class="pl__date">Aug 2014</span></a>
+        
           <a class=" pl__all" href="/2014/08/17/phpmysql.html"><span class="pl__circle"></span><span class="pl__title">php读取sql数据库中的值</span><span class="pl__date">Aug 2014</span></a>
         
           <a class="html5 pl__all" href="/html5/2014/08/17/html5canvas.html"><span class="pl__circle"></span><span class="pl__title">HTML5 Canvas 画心</span><span class="pl__date">Aug 2014</span></a>
@@ -64,6 +70,83 @@
         <article id="post__content">
   <h1 id="post__title" data-identifier="20140816">html5 事件监听</h1>
   <p>html5 事件监听</p>
+<html>
+	<head>
+		<title>方框移动，事件监听</title>
+		<meta charset="utf-8" />
+		<script type="text/javascript">
+			// <![CDATA[
+			//window.add
+			window.onload = function() {
+				document.body.addEventListener("keydown", onkey, false);
+				//建立一个键盘监听
+				// Window.addEventListener("keydown",onkey,false);
+				xs();
+			}
+			function xs()//画矩形
+			{
+				var c = document.getElementById("map");
+				var cxt = c.getContext("2d");
+				cxt.fillStyle = "#996633";
+				x = c.width / 2;
+				y = c.height / 2;
+				cxt.fillRect(x, y, 100, 100);
+				//cxt.translate(100, 100);
+			
+			}
+
+			function qc() {//清空画布
+				var c = document.getElementById("map");
+				var cxt = c.getContext("2d");
+				cxt.clearRect(0, 0, 500, 500);
+			}
+
+			function onkey(e) {
+				if (e.keyCode == 37) {
+					//alert("左");
+					qc();
+					x = x - 10;
+					var c = document.getElementById("map");
+					var cxt = c.getContext("2d");
+					cxt.fillStyle = "#996633";
+					cxt.fillRect(x, y, 100, 100);
+				}
+				if (e.keyCode == 38) {
+					//alert("上");
+					qc();
+					y = y - 10;
+					var c = document.getElementById("map");
+					var cxt = c.getContext("2d");
+					cxt.fillStyle = "#996633";
+					cxt.fillRect(x, y, 100, 100);
+				}
+				if (e.keyCode == 39) {
+					//alert("右");
+					qc();
+					x = x + 10;
+					var c = document.getElementById("map");
+					var cxt = c.getContext("2d");
+					cxt.fillStyle = "#996633";
+					cxt.fillRect(x, y, 100, 100);
+				}
+				if (e.keyCode == 40) {
+					//alert("下");
+					qc();
+					y = y + 10;
+					var c = document.getElementById("map");
+					var cxt = c.getContext("2d");
+					cxt.fillStyle = "#996633";
+					cxt.fillRect(x, y, 100, 100);
+				}
+			}
+
+		</script>
+	</head>
+	<body>
+		<canvas id="map" width="500" height="300" style="border:1px solid #c3c3c3;"></canvas>
+		<strong>按上下左右控制方框移动</strong>
+	</body>
+ 	</html>
 
 <div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
 	<span class="nt">&lt;head&gt;</span>
