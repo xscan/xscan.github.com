@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-    <title>css3学习历程</title>
+    <title>thinkphp联合查询例子</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
@@ -80,73 +80,82 @@
     <div id="post">
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="20140818">css3学习历程</h1>
-  <p>css3学习历程
-#最近发现css3逐渐强大了。还支持动画、和圆角的属性。
-##1.圆角（直接上例子）
-##代码如下：</p>
+  <h1 id="post__title" data-identifier="20150115">thinkphp联合查询例子</h1>
+  <p>thinkphp联合查询例子</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-<span class="nt">&lt;style&gt;</span> 
-<span class="nt">div</span>
-<span class="p">{</span>
-<span class="k">text-align</span><span class="o">:</span><span class="k">center</span><span class="p">;</span>
-<span class="k">border</span><span class="o">:</span><span class="m">2px</span> <span class="k">solid</span> <span class="m">#a1a1a1</span><span class="p">;</span>
-<span class="k">padding</span><span class="o">:</span><span class="m">10px</span> <span class="m">40px</span><span class="p">;</span> 
-<span class="k">background</span><span class="o">:</span><span class="m">#dddddd</span><span class="p">;</span>
-<span class="k">width</span><span class="o">:</span><span class="m">350px</span><span class="p">;</span>
-<span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span><span class="m">25px</span><span class="p">;</span>
-<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="k">border</span><span class="o">-</span><span class="n">radius</span><span class="o">:</span><span class="m">25px</span><span class="p">;</span> <span class="c">/* 老的 Firefox */</span>
-<span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-
-<span class="nt">&lt;div&gt;</span>border-radius 属性允许您向元素添加圆角。<span class="nt">&lt;/div&gt;</span>
-
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></div>
-
-<h2 id="section">2.边框阴影</h2>
-<p>##代码如下：</p>
-
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
-<span class="nt">&lt;head&gt;</span>
-<span class="nt">&lt;style&gt;</span> 
-<span class="nt">div</span>
-<span class="p">{</span>
-<span class="k">width</span><span class="o">:</span><span class="m">300px</span><span class="p">;</span>
-<span class="k">height</span><span class="o">:</span><span class="m">100px</span><span class="p">;</span>
-<span class="k">background-color</span><span class="o">:</span><span class="m">#ff9900</span><span class="p">;</span>
-<span class="o">-</span><span class="n">moz</span><span class="o">-</span><span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">10px</span> <span class="m">10px</span> <span class="m">5px</span> <span class="m">#888888</span><span class="p">;</span> <span class="c">/* 老的 Firefox */</span>
-<span class="n">box</span><span class="o">-</span><span class="n">shadow</span><span class="o">:</span> <span class="m">10px</span> <span class="m">10px</span> <span class="m">5px</span> <span class="m">#888888</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nt">&lt;/style&gt;</span>
-<span class="nt">&lt;/head&gt;</span>
-<span class="nt">&lt;body&gt;</span>
-
-<span class="nt">&lt;div&gt;&lt;/div&gt;</span>
-
-<span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span></code></pre></div>
-
-<h2 id="css3html5">一些css3+html5的教程和链接</h2>
-<ul>
-  <li><a href="http://www.w3school.com.cn/">w3c在线教程</a></li>
-  <li><a href="http://www.zi-han.net/css3/">css3在线圆角div生成器</a></li>
-  <li><a href="http://www.lanrenzhijia.com/js/css3/">懒人之家css3特效</a></li>
-  <li><a href="http://ecd.tencent.com/css3/tools.html">css3动画工具Tool</a></li>
-  <li><a href="http://www.bootcss.com/">Bootstrap简洁、直观、强悍的前端开发框架</a></li>
-  <li><a href="http://zaole.net/">css3+html5在线实例</a></li>
-</ul>
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="x">$user=new Model();</span>
+<span class="x">$list=$user-&gt;Table( &#39;mb_emp_jfrecord jf,mb_emp_rzinfo rz,mb_emp_branch dp,mb_emp_info info&#39; )</span>
+<span class="x">-&gt;field( &#39;branch_name,info.emp_name,sum(jf.value) value&#39; )</span>
+<span class="x">-&gt;where( &#39;jf.emp_id=rz.emp_id and dp.branch_id=rz.ssdw and info.emp_id=jf.emp_id &#39; )</span>
+<span class="x">-&gt;group( &#39;jf.emp_id&#39; )</span>
+<span class="x">-&gt;order( &#39;value desc&#39; )-&gt;select();</span>
+<span class="x">$this-&gt;assign( &#39;list&#39;, $list );</span>
+<span class="x">//$this-&gt;assign(&#39;id&#39;,&#39;0&#39;);</span>
+<span class="x">/*$Model=new Model();</span>
+<span class="x">$sql=&#39;select</span>
+<span class="x">branch_name,</span>
+<span class="x">info.emp_name,</span>
+<span class="x">sum(jf.value) value</span>
+<span class="x">from</span>
+<span class="x">mb_emp_jfrecord jf,</span>
+<span class="x">mb_emp_rzinfo rz,</span>
+<span class="x">mb_emp_branch dp,</span>
+<span class="x">mb_emp_info info</span>
+<span class="x">where</span>
+<span class="x">jf.emp_id=rz.emp_id</span>
+<span class="x">and dp.branch_id=rz.ssdw</span>
+<span class="x">and info.emp_id=jf.emp_id</span>
+<span class="x">group by jf.emp_id&#39;;</span>
+<span class="x">$u=$Model-&gt;query($sql);</span>
+<span class="x">$this-&gt;assign(&#39;list&#39;,$u);</span>
+<span class="x">var_dump($u);*/</span>
+<span class="x">$this-&gt;display();</span>
+<span class="x">}</span>
+<span class="x">public function Contrast() {</span>
+<span class="x">//sumjf</span>
+<span class="x">$user=new Model();</span>
+<span class="x">$list=$user-&gt;Table( &#39;mb_emp_jfrecord jf,mb_emp_rzinfo rz,mb_emp_branch dp,mb_emp_info info&#39; )</span>
+<span class="x">-&gt;field( &#39;info.emp_id,branch_name,info.emp_name,sum(jf.value) value&#39; )</span>
+<span class="x">-&gt;where( &#39;jf.emp_id=rz.emp_id and dp.branch_id=rz.ssdw and info.emp_id=jf.emp_id &#39; )</span>
+<span class="x">-&gt;group( &#39;jf.emp_id&#39; )</span>
+<span class="x">-&gt;order( &#39;value desc&#39; )-&gt;select();</span>
+<span class="x">$this-&gt;assign( &#39;list&#39;, $list );</span>
+<span class="x">// M(&#39;mb_emp_jfrecord &#39;)-&gt;while ( time()=10) {</span>
+<span class="x">//echo date(&#39;Y-m-d&#39;,time());</span>
+<span class="x">//tian jf</span>
+<span class="x">/*SELECT emp_id,SUM( value ) as value</span>
+<span class="x">FROM  `mb_emp_jfrecord`</span>
+<span class="x">WHERE add_time =  date(&#39;Y-m-d&#39;,time())</span>
+<span class="x">GROUP BY  `emp_id`</span>
+<span class="x">*/</span>
+<span class="x">// var_dump($list);</span>
+<span class="x">//yue jf</span>
+<span class="x">/*</span>
+<span class="x">$sql=&quot;SELECT SUM( value ) ,emp_id</span>
+<span class="x">FROM  `mb_emp_jfrecord`</span>
+<span class="x">WHERE add_time</span>
+<span class="x">like date(&#39;Y-m&#39;,time()) .&#39;%&#39;</span>
+<span class="x">GROUP BY  `emp_id` &quot;;</span>
+<span class="x">$monthjf=$user-&gt;query($sql);</span>
+<span class="x">*/</span>
+<span class="x">//查询当天积分</span>
+<span class="x">$dayjf=M( &#39;mb_emp_jfrecord&#39; )-&gt;field( &#39;value,emp_id&#39; )-&gt;where( &quot;add_time =&#39;&quot;.date( &#39;Y-m-d&#39;, time() ) .&quot;&#39;&quot; )-&gt;select();</span>
+<span class="x">$this-&gt;assign( &#39;dayjf&#39;, $dayjf );</span>
+<span class="x">//查询当月积分</span>
+<span class="x">$monthjf=M( &#39;mb_emp_jfrecord&#39; )-&gt;field( &#39;sum(value) value,emp_id&#39; )-&gt;where( &quot;add_time like&#39;&quot; .date( &#39;Y-m&#39;, time() ). &quot;%&#39;&quot; )-&gt;group( &#39;emp_id&#39; )-&gt;select();</span>
+<span class="x">$this-&gt;assign( &#39;monthjf&#39;, $monthjf );</span>
+<span class="x">//查询当年积分</span>
+<span class="x">$yearjf=M( &#39;mb_emp_jfrecord&#39; )-&gt;field( &#39;sum(value) value,emp_id&#39; )-&gt;where( &quot;add_time like &#39;&quot; .date( &#39;Y&#39;, time() ). &quot;%&#39;&quot; )-&gt;group( &#39;emp_id&#39; )-&gt;select();</span>
+<span class="x">$this-&gt;assign( &#39;yearjf&#39;, $yearjf );</span>
+<span class="x">$this-&gt;display();</span>
+<span class="x">}</span></code></pre></div>
 
 </article> <!-- end #post__content -->
 
 <div id="post__share">
-  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/html5/2014/08/18/html5css3.html&text=css3学习历程" target="_blank"></a>
+  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/home/2015/01/15/thinkphpcrdu.html&text=thinkphp联合查询例子" target="_blank"></a>
   <a id="icon-cc" class="fontello" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
-  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/html5/2014/08/18/html5css3.html&title=css3学习历程" target="_blank"></a>
+  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/home/2015/01/15/thinkphpcrdu.html&title=thinkphp联合查询例子" target="_blank"></a>
 </div> <!-- end #post__share -->
 
 <div id="disqus_thread">
