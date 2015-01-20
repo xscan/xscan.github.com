@@ -3,8 +3,6 @@ layout: post
 title: "动态添加js"
 categories: home
 ---
-{{ page.title}}
-动态加载userlist.js
 代码如下:
 {% highlight html %}
 <button type="button" onclick="loadjs()"></button>
