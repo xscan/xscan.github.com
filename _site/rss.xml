@@ -6,86 +6,9 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Thu, 15 Jan 2015 15:52:07 +0800</pubDate>
-    <lastBuildDate>Thu, 15 Jan 2015 15:52:07 +0800</lastBuildDate>
+    <pubDate>Tue, 20 Jan 2015 11:06:46 +0800</pubDate>
+    <lastBuildDate>Tue, 20 Jan 2015 11:06:46 +0800</lastBuildDate>
 
-    
-    <item>
-      <title>thinkphp联合查询例子</title>
-      <link>place_your_blog_url_here/home/2015/01/15/thinkphpcrdu.html</link>
-      <pubDate>15 Jan 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/home/2015/01/15/thinkphpcrdu</guid>
-      <description>&lt;p&gt;thinkphp联合查询例子&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;x&quot;&gt;$user=new Model();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$list=$user-&amp;gt;Table( &amp;#39;mb_emp_jfrecord jf,mb_emp_rzinfo rz,mb_emp_branch dp,mb_emp_info info&amp;#39; )&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;-&amp;gt;field( &amp;#39;branch_name,info.emp_name,sum(jf.value) value&amp;#39; )&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;-&amp;gt;where( &amp;#39;jf.emp_id=rz.emp_id and dp.branch_id=rz.ssdw and info.emp_id=jf.emp_id &amp;#39; )&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;-&amp;gt;group( &amp;#39;jf.emp_id&amp;#39; )&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;-&amp;gt;order( &amp;#39;value desc&amp;#39; )-&amp;gt;select();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$this-&amp;gt;assign( &amp;#39;list&amp;#39;, $list );&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;//$this-&amp;gt;assign(&amp;#39;id&amp;#39;,&amp;#39;0&amp;#39;);&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;/*$Model=new Model();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$sql=&amp;#39;select&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;branch_name,&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;info.emp_name,&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;sum(jf.value) value&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;from&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;mb_emp_jfrecord jf,&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;mb_emp_rzinfo rz,&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;mb_emp_branch dp,&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;mb_emp_info info&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;where&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;jf.emp_id=rz.emp_id&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;and dp.branch_id=rz.ssdw&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;and info.emp_id=jf.emp_id&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;group by jf.emp_id&amp;#39;;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$u=$Model-&amp;gt;query($sql);&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$this-&amp;gt;assign(&amp;#39;list&amp;#39;,$u);&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;var_dump($u);*/&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$this-&amp;gt;display();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;public function Contrast() {&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;//sumjf&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$user=new Model();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$list=$user-&amp;gt;Table( &amp;#39;mb_emp_jfrecord jf,mb_emp_rzinfo rz,mb_emp_branch dp,mb_emp_info info&amp;#39; )&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;-&amp;gt;field( &amp;#39;info.emp_id,branch_name,info.emp_name,sum(jf.value) value&amp;#39; )&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;-&amp;gt;where( &amp;#39;jf.emp_id=rz.emp_id and dp.branch_id=rz.ssdw and info.emp_id=jf.emp_id &amp;#39; )&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;-&amp;gt;group( &amp;#39;jf.emp_id&amp;#39; )&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;-&amp;gt;order( &amp;#39;value desc&amp;#39; )-&amp;gt;select();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$this-&amp;gt;assign( &amp;#39;list&amp;#39;, $list );&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;// M(&amp;#39;mb_emp_jfrecord &amp;#39;)-&amp;gt;while ( time()=10) {&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;//echo date(&amp;#39;Y-m-d&amp;#39;,time());&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;//tian jf&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;/*SELECT emp_id,SUM( value ) as value&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;FROM  `mb_emp_jfrecord`&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;WHERE add_time =  date(&amp;#39;Y-m-d&amp;#39;,time())&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;GROUP BY  `emp_id`&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;*/&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;// var_dump($list);&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;//yue jf&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;/*&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$sql=&amp;quot;SELECT SUM( value ) ,emp_id&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;FROM  `mb_emp_jfrecord`&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;WHERE add_time&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;like date(&amp;#39;Y-m&amp;#39;,time()) .&amp;#39;%&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;GROUP BY  `emp_id` &amp;quot;;&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$monthjf=$user-&amp;gt;query($sql);&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;*/&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;//查询当天积分&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$dayjf=M( &amp;#39;mb_emp_jfrecord&amp;#39; )-&amp;gt;field( &amp;#39;value,emp_id&amp;#39; )-&amp;gt;where( &amp;quot;add_time =&amp;#39;&amp;quot;.date( &amp;#39;Y-m-d&amp;#39;, time() ) .&amp;quot;&amp;#39;&amp;quot; )-&amp;gt;select();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$this-&amp;gt;assign( &amp;#39;dayjf&amp;#39;, $dayjf );&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;//查询当月积分&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$monthjf=M( &amp;#39;mb_emp_jfrecord&amp;#39; )-&amp;gt;field( &amp;#39;sum(value) value,emp_id&amp;#39; )-&amp;gt;where( &amp;quot;add_time like&amp;#39;&amp;quot; .date( &amp;#39;Y-m&amp;#39;, time() ). &amp;quot;%&amp;#39;&amp;quot; )-&amp;gt;group( &amp;#39;emp_id&amp;#39; )-&amp;gt;select();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$this-&amp;gt;assign( &amp;#39;monthjf&amp;#39;, $monthjf );&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;//查询当年积分&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$yearjf=M( &amp;#39;mb_emp_jfrecord&amp;#39; )-&amp;gt;field( &amp;#39;sum(value) value,emp_id&amp;#39; )-&amp;gt;where( &amp;quot;add_time like &amp;#39;&amp;quot; .date( &amp;#39;Y&amp;#39;, time() ). &amp;quot;%&amp;#39;&amp;quot; )-&amp;gt;group( &amp;#39;emp_id&amp;#39; )-&amp;gt;select();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$this-&amp;gt;assign( &amp;#39;yearjf&amp;#39;, $yearjf );&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;$this-&amp;gt;display();&lt;/span&gt;
-&lt;span class=&quot;x&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-</description>
-    </item>
     
     <item>
       <title>动态添加js</title>
@@ -781,6 +704,62 @@ db.tianyc03.find()
 
 &lt;span class=&quot;nb&quot;&gt;mysql_close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$con&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//关闭数据库&lt;/span&gt;
 &lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>HTML5 Canvas 画心</title>
+      <link>place_your_blog_url_here/html5/2014/08/17/html5canvas.html</link>
+      <pubDate>17 Aug 2014</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/html5/2014/08/17/html5canvas</guid>
+      <description>&lt;html&gt;
+	&lt;head&gt;
+		&lt;meta charset=&quot;utf-8&quot; /&gt;
+		&lt;title&gt;HTML5 Canvas 心&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		
+		&lt;canvas id=&quot;x&quot; height=&quot;500&quot; width=&quot;500&quot;&gt;&lt;/canvas&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			var ob=document.getElementById(&quot;x&quot;);
+			var c=ob.getContext(&quot;2d&quot;);
+			c.lineWidth=2;
+			c.strokeStyle='green';
+			c.beginPath();
+			c.moveTo(250,160);
+			c.bezierCurveTo(200,125,175,200,250,250) ;
+			c.moveTo(250,160);
+			c.bezierCurveTo(300,125,325,200,250,250) ;
+			c.stroke();
+		&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;utf-8&amp;quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;HTML5 Canvas 心&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+		
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;canvas&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;x&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;height=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;1000&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;1000&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/canvas&amp;gt;&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+			&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ob&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;x&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ob&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getContext&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;2d&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;lineWidth&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;strokeStyle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;green&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;beginPath&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;moveTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;320&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bezierCurveTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;250&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;350&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;moveTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;320&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;bezierCurveTo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;600&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;250&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;650&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;500&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+			&lt;span class=&quot;nx&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;stroke&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+		&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
     </item>
