@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-    <title>关于我</title>
+    <title>ubuntu-php5.5.9安装mongodb数据库扩展</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
@@ -80,19 +80,26 @@
     <div id="post">
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="20140813">关于我</h1>
-  <p>关于我</p>
+  <h1 id="post__title" data-identifier="20150126">ubuntu-php5.5.9安装mongodb数据库扩展</h1>
+  <p>ubuntu-php5.5.9安装mongodb数据库扩展</p>
 
-<pre><code> 敬请期待!
+<pre><code>1. wget http://pecl.php.net/get/mongo-1.4.5.tgz
+2. tar zxvf mongo-1.4.5.tgz
+3. cd mongo-1.4.5
+4. phpize(运行此命令生成./configureure)
+5. ./configureure
+6. make
+7. sudo make install( 此地方最好加sudo 用root权限执行。本人就在这个地方卡了很久)
+8. 查找php.ini。在php.ini里加入extension=mongo.so这行
+9.重启apache2 ：service apache2 restart(最好重启一下系统)
 </code></pre>
-
 
 </article> <!-- end #post__content -->
 
 <div id="post__share">
-  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/home/2014/08/13/welcome-to-jekyll.html&text=关于我" target="_blank"></a>
+  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/2015/01/26/ubuntuphpExt.html&text=ubuntu-php5.5.9安装mongodb数据库扩展" target="_blank"></a>
   <a id="icon-cc" class="fontello" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
-  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/home/2014/08/13/welcome-to-jekyll.html&title=关于我" target="_blank"></a>
+  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/2015/01/26/ubuntuphpExt.html&title=ubuntu-php5.5.9安装mongodb数据库扩展" target="_blank"></a>
 </div> <!-- end #post__share -->
 
 <div id="disqus_thread">
