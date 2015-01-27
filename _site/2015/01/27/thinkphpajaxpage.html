@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
+
+    <title>thinkphpajax分页</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+  </head>
+  <body>
+    <aside id="sidebar">
+      <nav id="tags">
+        <a href="/index.html" id="avatar"></a>
+
+        <ul id="tags__ul">
+          <li id="js-label1" class="tags__li tags-btn active">All Posts</li>
+          <li id="js-label2" class="tags__li tags-btn">Home</li>
+          <li id="js-label3" class="tags__li tags-btn">Html5<li>
+          <li id="js-label4" class="tags__li tags-btn">feeling</li>
+          <li id="js-label5" class="tags__li tags-btn">--</li>
+          <li id="js-label6" class="tags__li tags-btn">---</li>
+        </ul>
+
+        <div id="tags__bottom">
+          <a href="mailto:xoscan@163.com" id="icon-email" class="tags-btn fontello"></a>
+          <a href="/rss.xml" id="icon-feed" class="tags-btn fontello"></a>
+        </div>
+      </nav> <!-- end #tags -->
+
+      <div id="posts-list">
+        <form action="" id="search-form">
+          <a href="/index.html" id="mobile-avatar"></a>
+          <!-- NOTE: input field is disabled by default -->
+          <input id="search-input" type="text" placeholder="Search..." disabled >
+        </form>
+
+        <nav id="pl__container">
+        
+          <a class=" pl__all" href="/2015/01/27/thinkphpajaxpage.html"><span class="pl__circle"></span><span class="pl__title">thinkphpajax分页</span><span class="pl__date">Jan 2015</span></a>
+        
+          <a class=" pl__all" href="/2015/01/26/ubuntuphpExt.html"><span class="pl__circle"></span><span class="pl__title">ubuntu-php5.5.9安装mongodb数据库扩展</span><span class="pl__date">Jan 2015</span></a>
+        
+          <a class="feeling pl__all" href="/feeling/2015/01/20/feeling.html"><span class="pl__circle"></span><span class="pl__title">黄梁一梦</span><span class="pl__date">Jan 2015</span></a>
+        
+          <a class="home pl__all" href="/home/2015/01/15/addjs.html"><span class="pl__circle"></span><span class="pl__title">动态添加js</span><span class="pl__date">Jan 2015</span></a>
+        
+          <a class="home pl__all" href="/home/2015/01/14/jquerypost.html"><span class="pl__circle"></span><span class="pl__title">jquerypost提交方法</span><span class="pl__date">Jan 2015</span></a>
+        
+          <a class="home pl__all" href="/home/2014/10/23/linq.html"><span class="pl__circle"></span><span class="pl__title">Linq例子</span><span class="pl__date">Oct 2014</span></a>
+        
+          <a class="home pl__all" href="/home/2014/10/22/mongodb.html"><span class="pl__circle"></span><span class="pl__title">Nosql数据库之MongoDB</span><span class="pl__date">Oct 2014</span></a>
+        
+          <a class="home pl__all" href="/home/2014/10/05/yue.html"><span class="pl__circle"></span><span class="pl__title">9月经历</span><span class="pl__date">Oct 2014</span></a>
+        
+          <a class="home pl__all" href="/home/2014/10/05/delphi.html"><span class="pl__circle"></span><span class="pl__title">delphi作业</span><span class="pl__date">Oct 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/18/html5css3.html"><span class="pl__circle"></span><span class="pl__title">css3学习历程</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class=" pl__all" href="/2014/08/17/phpmysql.html"><span class="pl__circle"></span><span class="pl__title">php读取sql数据库中的值</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/17/html5canvas.html"><span class="pl__circle"></span><span class="pl__title">HTML5 Canvas 画心</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="home pl__all" href="/home/2014/08/17/home.html"><span class="pl__circle"></span><span class="pl__title">搭建blog的路</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/16/html5%20HE.html"><span class="pl__circle"></span><span class="pl__title">MARKDOWN</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/16/html5.html"><span class="pl__circle"></span><span class="pl__title">html5 事件监听</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="html5 pl__all" href="/html5/2014/08/15/html5hy.html"><span class="pl__circle"></span><span class="pl__title">css3 火焰字</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class=" pl__all" href="/2014/08/15/1.html"><span class="pl__circle"></span><span class="pl__title">python socket tcp简单实例</span><span class="pl__date">Aug 2014</span></a>
+        
+          <a class="home pl__all" href="/home/2014/08/13/welcome-to-jekyll.html"><span class="pl__circle"></span><span class="pl__title">关于我</span><span class="pl__date">Aug 2014</span></a>
+        
+        </nav>
+      </div> <!-- end #posts-list -->
+    </aside> <!-- end #sidebar -->
+
+    <div id="post">
+      <div id="pjax">
+        <article id="post__content">
+  <h1 id="post__title" data-identifier="20150127">thinkphpajax分页</h1>
+  <p>thinkphpajax分页
+Thinkphp目录的Lib\ORG\Util\目录里新建AjaxPage.class.php,写入一下内容：</p>
+
+<pre><code>&lt;?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2009 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liu21st &lt;liu21st@gmail.com&gt;
+// +----------------------------------------------------------------------
+// $Id: Page.class.php 2712 2012-02-06 10:12:49Z liu21st $
+
+class AjaxPage {
+    // 分页栏每页显示的页数
+    public $rollPage = 5;
+    // 页数跳转时要带的参数
+    public $parameter  ;
+    // 默认列表每页显示行数
+    public $listRows = 20;
+    // 起始行数
+    public $firstRow ;
+    // 分页总页面数
+    protected $totalPages  ;
+    // 总行数
+    protected $totalRows  ;
+    // 当前页数
+    protected $nowPage    ;
+    // 分页的栏的总页数
+    protected $coolPages   ;
+    // 分页显示定制
+    protected $config  = array('header'=&gt;'条记录','prev'=&gt;'上一页','next'=&gt;'下一页','first'=&gt;'第一页','last'=&gt;'最后一页','theme'=&gt;' %totalRow% %header% %nowPage%/%totalPage% 页 %upPage% %downPage% %first%  %prePage%  %linkPage%  %nextPage% %end%');
+    // 默认分页变量名
+    protected $varPage;
+
+
+    public function __construct($totalRows,$listRows='',$ajax_func,$parameter='') {
+        $this-&gt;totalRows = $totalRows;
+        $this-&gt;ajax_func = $ajax_func;
+        $this-&gt;parameter = $parameter;
+        $this-&gt;varPage = C('VAR_PAGE') ? C('VAR_PAGE') : 'p' ;
+        if(!empty($listRows)) {
+            $this-&gt;listRows = intval($listRows);
+        }
+        $this-&gt;totalPages = ceil($this-&gt;totalRows/$this-&gt;listRows);     //总页数
+        $this-&gt;coolPages  = ceil($this-&gt;totalPages/$this-&gt;rollPage);
+        $this-&gt;nowPage  = !empty($_GET[$this-&gt;varPage])?intval($_GET[$this-&gt;varPage]):1;
+        if(!empty($this-&gt;totalPages) &amp;&amp; $this-&gt;nowPage&gt;$this-&gt;totalPages) {
+            $this-&gt;nowPage = $this-&gt;totalPages;
+        }
+        $this-&gt;firstRow = $this-&gt;listRows*($this-&gt;nowPage-1);
+    }
+
+public function setConfig($name,$value) {
+        if(isset($this-&gt;config[$name])) {
+            $this-&gt;config[$name]    =   $value;
+        }
+    }
+
+
+    public function show() {
+        if(0 == $this-&gt;totalRows) return '';
+        $p = $this-&gt;varPage;
+        $nowCoolPage      = ceil($this-&gt;nowPage/$this-&gt;rollPage);
+        $url  =  $_SERVER['REQUEST_URI'].(strpos($_SERVER['REQUEST_URI'],'?')?'':"?").$this-&gt;parameter;
+        $parse = parse_url($url);
+        if(isset($parse['query'])) {
+            parse_str($parse['query'],$params);
+            unset($params[$p]);
+            $url   =  $parse['path'].'?'.http_build_query($params);
+        }
+        //上下翻页字符串
+        $upRow   = $this-&gt;nowPage-1;
+        $downRow = $this-&gt;nowPage+1;
+        if ($upRow&gt;0){
+            $upPage="&lt;a id='big' href='javascript:".$this-&gt;ajax_func."(".$upRow.")'&gt;".$this-&gt;config['prev']."&lt;/a&gt;";
+        }else{
+            $upPage="";
+        }
+
+if ($downRow &lt;= $this-&gt;totalPages){
+            $downPage="&lt;a id='big' href='javascript:".$this-&gt;ajax_func."(".$downRow.")'&gt;".$this-&gt;config['next']."&lt;/a&gt;";
+        }else{
+            $downPage="";
+        }
+        // &lt;&lt; &lt; &gt; &gt;&gt;
+        if($nowCoolPage == 1){
+            $theFirst = "";
+            $prePage = "";
+        }else{
+            $preRow =  $this-&gt;nowPage-$this-&gt;rollPage;
+            $prePage = "&lt;a id='big' href='javascript:".$this-&gt;ajax_func."(".$preRow.")'&gt;上".$this-&gt;rollPage."页&lt;/a&gt;";
+            $theFirst = "&lt;a id='big' href='javascript:".$this-&gt;ajax_func."(1)' &gt;".$this-&gt;config['first']."&lt;/a&gt;";
+        }
+        if($nowCoolPage == $this-&gt;coolPages){
+            $nextPage = "";
+            $theEnd="";
+        }else{
+            $nextRow = $this-&gt;nowPage+$this-&gt;rollPage;
+            $theEndRow = $this-&gt;totalPages;
+            $nextPage = "&lt;a id='big' href='javascript:".$this-&gt;ajax_func."(".$nextRow.")' &gt;下".$this-&gt;rollPage."页&lt;/a&gt;";
+            $theEnd = "&lt;a id='big' href='javascript:".$this-&gt;ajax_func."(".$theEndRow.")' &gt;".$this-&gt;config['last']."&lt;/a&gt;";
+        }
+        // 1 2 3 4 5
+        $linkPage = "";
+        for($i=1;$i&lt;=$this-&gt;rollPage;$i++){
+            $page=($nowCoolPage-1)*$this-&gt;rollPage+$i;
+            if($page!=$this-&gt;nowPage){
+                if($page&lt;=$this-&gt;totalPages){
+                   $linkPage .= "&amp;nbsp;&lt;a id='big' href='javascript:".$this-&gt;ajax_func."(".$page.")'&gt;&amp;nbsp;".$page."&amp;nbsp;&lt;/a&gt;";
+                }else{
+                    break;
+                }
+            }else{
+                if($this-&gt;totalPages != 1){
+                    $linkPage .= "&amp;nbsp;&lt;span class='current'&gt;".$page."&lt;/span&gt;";
+                }
+            }
+        }
+        $pageStr  =  str_replace(
+            array('%header%','%nowPage%','%totalRow%','%totalPage%','%upPage%','%downPage%','%first%','%prePage%','%linkPage%','%nextPage%','%end%'),
+            array($this-&gt;config['header'],$this-&gt;nowPage,$this-&gt;totalRows,$this-&gt;totalPages,$upPage,$downPage,$theFirst,$prePage,$linkPage,$nextPage,$theEnd),$this-&gt;config['theme']);
+        return $pageStr;
+    }
+
+}
+
+?&gt;
+</code></pre>
+
+<p>控制器里写入以下内容：</p>
+
+<pre><code>&lt;?php
+class UserAction extends Action{
+    public function user(){
+          import("ORG.Util.AjaxPage");// 导入分页类  注意导入的是自己写的AjaxPage类
+          $credit = M('user');
+          $count = $credit-&gt;count(); //计算记录数
+        $limitRows = 5; // 设置每页记录数
+       
+        $p = new AjaxPage($count, $limitRows,"user"); //第三个参数是你需要调用换页的ajax函数名
+        $limit_value = $p-&gt;firstRow . "," . $p-&gt;listRows;
+       
+        $data = $credit-&gt;order('id desc')-&gt;limit($limit_value)-&gt;select(); // 查询数据
+        $page = $p-&gt;show(); // 产生分页信息，AJAX的连接在此处生成
+
+        $this-&gt;assign('list',$data);
+        $this-&gt;assign('page',$page);
+        $this-&gt;display();
+
+     }
+}
+</code></pre>
+
+<p>=========我是分界线======================================================</p>
+
+<p>模板文件如下：</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;</span>
+        <span class="nt">&lt;title&gt;</span>Ajax无刷新分页<span class="nt">&lt;/title&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src=</span><span class="s">&quot;../Public/jquery-1.7.2.min.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+        <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
+            <span class="kd">function</span> <span class="nx">user</span><span class="p">(</span><span class="nx">id</span><span class="p">){</span>    <span class="c1">//user函数名 一定要和action中的第三个参数一致上面有</span>
+                 <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+                    <span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;User/user&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;p&#39;</span><span class="o">:</span><span class="nx">id</span><span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>  <span class="c1">//用get方法发送信息到UserAction中的user方法</span>
+                     <span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#user&quot;</span><span class="p">).</span><span class="nx">replaceWith</span><span class="p">(</span><span class="s2">&quot;&lt;div  id=&#39;user&#39;&gt;&quot;</span><span class="o">+</span><span class="nx">data</span><span class="o">+</span><span class="s2">&quot;&lt;/div&gt;&quot;</span><span class="p">);</span> <span class="c1">//user一定要和tpl中的一致</span>
+                <span class="p">});</span>
+             <span class="p">}</span>
+            
+        <span class="nt">&lt;/script&gt;</span>
+    <span class="nt">&lt;/head&gt;</span>
+
+    <span class="nt">&lt;body&gt;</span>
+            <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&#39;user&#39;</span><span class="nt">&gt;</span>   <span class="c">&lt;!--这里的user和下面js中的test要一致--&gt;</span>
+                    <span class="nt">&lt;volist</span> <span class="na">id=</span><span class="s">&#39;list&#39;</span> <span class="na">name=</span><span class="s">&#39;list&#39;</span><span class="nt">&gt;</span>   <span class="c">&lt;!--内容输出--&gt;</span>
+                    <span class="err">&lt;</span>{$list.id}&gt;<span class="ni">&amp;nbsp;&amp;nbsp;</span><span class="err">&lt;</span>{$list.username}&gt;<span class="nt">&lt;br/&gt;</span>
+            <span class="nt">&lt;/volist&gt;</span>
+            <span class="err">&lt;</span>{$page}&gt;  <span class="c">&lt;!--分页输出--&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+        
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+
+</article> <!-- end #post__content -->
+
+<div id="post__share">
+  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/2015/01/27/thinkphpajaxpage.html&text=thinkphpajax分页" target="_blank"></a>
+  <a id="icon-cc" class="fontello" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
+  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/2015/01/27/thinkphpajaxpage.html&title=thinkphpajax分页" target="_blank"></a>
+</div> <!-- end #post__share -->
+
+<div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink" target="_blank">Loading Disqus comments...</a>
+</div> <!-- end #disqus_thread -->
+
+<p id="copyright">Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a>&nbsp;&nbsp;|&nbsp;&nbsp;Theme <a href="https://github.com/P233/3-Jekyll" target="_blank">3-Jekyll</a></p>
+      </div> <!-- end #pjax -->
+
+      <div id="post__toc-trigger">
+        <div id="post__toc">
+          <span id="post__toc-title">Table of Contents</span>
+          <ul id="post__toc-ul"></ul>
+        </div>
+      </div>
+    </div> <!-- end #post -->
+
+    <button id="js-fullscreen"><span id="icon-arrow" class="fontello"></span></button>
+
+    <script src="/assets/js/jquery-2.0.3.min.js"></script>
+    <script src="/assets/js/jquery.pjax.js"></script>
+    <script src="/assets/js/nprogress.js"></script>
+    <script src="/assets/js/script.js"></script>
+  </body>
+</html>

@@ -6,9 +6,203 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Mon, 26 Jan 2015 13:32:27 +0800</pubDate>
-    <lastBuildDate>Mon, 26 Jan 2015 13:32:27 +0800</lastBuildDate>
+    <pubDate>Tue, 27 Jan 2015 12:45:38 +0800</pubDate>
+    <lastBuildDate>Tue, 27 Jan 2015 12:45:38 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>thinkphpajax分页</title>
+      <link>place_your_blog_url_here/2015/01/27/thinkphpajaxpage.html</link>
+      <pubDate>27 Jan 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/2015/01/27/thinkphpajaxpage</guid>
+      <description>&lt;p&gt;thinkphpajax分页
+Thinkphp目录的Lib\ORG\Util\目录里新建AjaxPage.class.php,写入一下内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+// +----------------------------------------------------------------------
+// | ThinkPHP [ WE CAN DO IT JUST THINK IT ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2009 http://thinkphp.cn All rights reserved.
+// +----------------------------------------------------------------------
+// | Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+// +----------------------------------------------------------------------
+// | Author: liu21st &amp;lt;liu21st@gmail.com&amp;gt;
+// +----------------------------------------------------------------------
+// $Id: Page.class.php 2712 2012-02-06 10:12:49Z liu21st $
+
+class AjaxPage {
+    // 分页栏每页显示的页数
+    public $rollPage = 5;
+    // 页数跳转时要带的参数
+    public $parameter  ;
+    // 默认列表每页显示行数
+    public $listRows = 20;
+    // 起始行数
+    public $firstRow ;
+    // 分页总页面数
+    protected $totalPages  ;
+    // 总行数
+    protected $totalRows  ;
+    // 当前页数
+    protected $nowPage    ;
+    // 分页的栏的总页数
+    protected $coolPages   ;
+    // 分页显示定制
+    protected $config  = array('header'=&amp;gt;'条记录','prev'=&amp;gt;'上一页','next'=&amp;gt;'下一页','first'=&amp;gt;'第一页','last'=&amp;gt;'最后一页','theme'=&amp;gt;' %totalRow% %header% %nowPage%/%totalPage% 页 %upPage% %downPage% %first%  %prePage%  %linkPage%  %nextPage% %end%');
+    // 默认分页变量名
+    protected $varPage;
+
+
+    public function __construct($totalRows,$listRows='',$ajax_func,$parameter='') {
+        $this-&amp;gt;totalRows = $totalRows;
+        $this-&amp;gt;ajax_func = $ajax_func;
+        $this-&amp;gt;parameter = $parameter;
+        $this-&amp;gt;varPage = C('VAR_PAGE') ? C('VAR_PAGE') : 'p' ;
+        if(!empty($listRows)) {
+            $this-&amp;gt;listRows = intval($listRows);
+        }
+        $this-&amp;gt;totalPages = ceil($this-&amp;gt;totalRows/$this-&amp;gt;listRows);     //总页数
+        $this-&amp;gt;coolPages  = ceil($this-&amp;gt;totalPages/$this-&amp;gt;rollPage);
+        $this-&amp;gt;nowPage  = !empty($_GET[$this-&amp;gt;varPage])?intval($_GET[$this-&amp;gt;varPage]):1;
+        if(!empty($this-&amp;gt;totalPages) &amp;amp;&amp;amp; $this-&amp;gt;nowPage&amp;gt;$this-&amp;gt;totalPages) {
+            $this-&amp;gt;nowPage = $this-&amp;gt;totalPages;
+        }
+        $this-&amp;gt;firstRow = $this-&amp;gt;listRows*($this-&amp;gt;nowPage-1);
+    }
+
+public function setConfig($name,$value) {
+        if(isset($this-&amp;gt;config[$name])) {
+            $this-&amp;gt;config[$name]    =   $value;
+        }
+    }
+
+
+    public function show() {
+        if(0 == $this-&amp;gt;totalRows) return '';
+        $p = $this-&amp;gt;varPage;
+        $nowCoolPage      = ceil($this-&amp;gt;nowPage/$this-&amp;gt;rollPage);
+        $url  =  $_SERVER['REQUEST_URI'].(strpos($_SERVER['REQUEST_URI'],'?')?'':&quot;?&quot;).$this-&amp;gt;parameter;
+        $parse = parse_url($url);
+        if(isset($parse['query'])) {
+            parse_str($parse['query'],$params);
+            unset($params[$p]);
+            $url   =  $parse['path'].'?'.http_build_query($params);
+        }
+        //上下翻页字符串
+        $upRow   = $this-&amp;gt;nowPage-1;
+        $downRow = $this-&amp;gt;nowPage+1;
+        if ($upRow&amp;gt;0){
+            $upPage=&quot;&amp;lt;a id='big' href='javascript:&quot;.$this-&amp;gt;ajax_func.&quot;(&quot;.$upRow.&quot;)'&amp;gt;&quot;.$this-&amp;gt;config['prev'].&quot;&amp;lt;/a&amp;gt;&quot;;
+        }else{
+            $upPage=&quot;&quot;;
+        }
+
+if ($downRow &amp;lt;= $this-&amp;gt;totalPages){
+            $downPage=&quot;&amp;lt;a id='big' href='javascript:&quot;.$this-&amp;gt;ajax_func.&quot;(&quot;.$downRow.&quot;)'&amp;gt;&quot;.$this-&amp;gt;config['next'].&quot;&amp;lt;/a&amp;gt;&quot;;
+        }else{
+            $downPage=&quot;&quot;;
+        }
+        // &amp;lt;&amp;lt; &amp;lt; &amp;gt; &amp;gt;&amp;gt;
+        if($nowCoolPage == 1){
+            $theFirst = &quot;&quot;;
+            $prePage = &quot;&quot;;
+        }else{
+            $preRow =  $this-&amp;gt;nowPage-$this-&amp;gt;rollPage;
+            $prePage = &quot;&amp;lt;a id='big' href='javascript:&quot;.$this-&amp;gt;ajax_func.&quot;(&quot;.$preRow.&quot;)'&amp;gt;上&quot;.$this-&amp;gt;rollPage.&quot;页&amp;lt;/a&amp;gt;&quot;;
+            $theFirst = &quot;&amp;lt;a id='big' href='javascript:&quot;.$this-&amp;gt;ajax_func.&quot;(1)' &amp;gt;&quot;.$this-&amp;gt;config['first'].&quot;&amp;lt;/a&amp;gt;&quot;;
+        }
+        if($nowCoolPage == $this-&amp;gt;coolPages){
+            $nextPage = &quot;&quot;;
+            $theEnd=&quot;&quot;;
+        }else{
+            $nextRow = $this-&amp;gt;nowPage+$this-&amp;gt;rollPage;
+            $theEndRow = $this-&amp;gt;totalPages;
+            $nextPage = &quot;&amp;lt;a id='big' href='javascript:&quot;.$this-&amp;gt;ajax_func.&quot;(&quot;.$nextRow.&quot;)' &amp;gt;下&quot;.$this-&amp;gt;rollPage.&quot;页&amp;lt;/a&amp;gt;&quot;;
+            $theEnd = &quot;&amp;lt;a id='big' href='javascript:&quot;.$this-&amp;gt;ajax_func.&quot;(&quot;.$theEndRow.&quot;)' &amp;gt;&quot;.$this-&amp;gt;config['last'].&quot;&amp;lt;/a&amp;gt;&quot;;
+        }
+        // 1 2 3 4 5
+        $linkPage = &quot;&quot;;
+        for($i=1;$i&amp;lt;=$this-&amp;gt;rollPage;$i++){
+            $page=($nowCoolPage-1)*$this-&amp;gt;rollPage+$i;
+            if($page!=$this-&amp;gt;nowPage){
+                if($page&amp;lt;=$this-&amp;gt;totalPages){
+                   $linkPage .= &quot;&amp;amp;nbsp;&amp;lt;a id='big' href='javascript:&quot;.$this-&amp;gt;ajax_func.&quot;(&quot;.$page.&quot;)'&amp;gt;&amp;amp;nbsp;&quot;.$page.&quot;&amp;amp;nbsp;&amp;lt;/a&amp;gt;&quot;;
+                }else{
+                    break;
+                }
+            }else{
+                if($this-&amp;gt;totalPages != 1){
+                    $linkPage .= &quot;&amp;amp;nbsp;&amp;lt;span class='current'&amp;gt;&quot;.$page.&quot;&amp;lt;/span&amp;gt;&quot;;
+                }
+            }
+        }
+        $pageStr  =  str_replace(
+            array('%header%','%nowPage%','%totalRow%','%totalPage%','%upPage%','%downPage%','%first%','%prePage%','%linkPage%','%nextPage%','%end%'),
+            array($this-&amp;gt;config['header'],$this-&amp;gt;nowPage,$this-&amp;gt;totalRows,$this-&amp;gt;totalPages,$upPage,$downPage,$theFirst,$prePage,$linkPage,$nextPage,$theEnd),$this-&amp;gt;config['theme']);
+        return $pageStr;
+    }
+
+}
+
+?&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;控制器里写入以下内容：&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?php
+class UserAction extends Action{
+    public function user(){
+          import(&quot;ORG.Util.AjaxPage&quot;);// 导入分页类  注意导入的是自己写的AjaxPage类
+          $credit = M('user');
+          $count = $credit-&amp;gt;count(); //计算记录数
+        $limitRows = 5; // 设置每页记录数
+       
+        $p = new AjaxPage($count, $limitRows,&quot;user&quot;); //第三个参数是你需要调用换页的ajax函数名
+        $limit_value = $p-&amp;gt;firstRow . &quot;,&quot; . $p-&amp;gt;listRows;
+       
+        $data = $credit-&amp;gt;order('id desc')-&amp;gt;limit($limit_value)-&amp;gt;select(); // 查询数据
+        $page = $p-&amp;gt;show(); // 产生分页信息，AJAX的连接在此处生成
+
+        $this-&amp;gt;assign('list',$data);
+        $this-&amp;gt;assign('page',$page);
+        $this-&amp;gt;display();
+
+     }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;=========我是分界线======================================================&lt;/p&gt;
+
+&lt;p&gt;模板文件如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;Ajax无刷新分页&lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;../Public/jquery-1.7.2.min.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;user&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;//user函数名 一定要和action中的第三个参数一致上面有&lt;/span&gt;
+                 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+                    &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;User/user&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;p&amp;#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;//用get方法发送信息到UserAction中的user方法&lt;/span&gt;
+                     &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;#user&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;replaceWith&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;div  id=&amp;#39;user&amp;#39;&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/div&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;//user一定要和tpl中的一致&lt;/span&gt;
+                &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+             &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;user&amp;#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;&amp;lt;!--这里的user和下面js中的test要一致--&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;nt&quot;&gt;&amp;lt;volist&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;id=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;list&amp;#39;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;list&amp;#39;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;   &lt;span class=&quot;c&quot;&gt;&amp;lt;!--内容输出--&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;{$list.id}&amp;gt;&lt;span class=&quot;ni&quot;&gt;&amp;amp;nbsp;&amp;amp;nbsp;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;{$list.username}&amp;gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;br/&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/volist&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;err&quot;&gt;&amp;lt;&lt;/span&gt;{$page}&amp;gt;  &lt;span class=&quot;c&quot;&gt;&amp;lt;!--分页输出--&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+        
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</description>
+    </item>
     
     <item>
       <title>ubuntu-php5.5.9安装mongodb数据库扩展</title>
@@ -631,52 +825,6 @@ db.tianyc03.find()
   &lt;li&gt;&lt;a href=&quot;http://www.bootcss.com/&quot;&gt;Bootstrap简洁、直观、强悍的前端开发框架&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;http://zaole.net/&quot;&gt;css3+html5在线实例&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>php读取sql数据库中的值</title>
-      <link>place_your_blog_url_here/2014/08/17/phpmysql.html</link>
-      <pubDate>17 Aug 2014</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/2014/08/17/phpmysql</guid>
-      <description>&lt;p&gt;php读取sql数据库中的值&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-php&quot; data-lang=&quot;php&quot;&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;?php&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;$con&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_connect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;localhost&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;root&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;6&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//数据库连接，第一个为数据库ip，二为用户名，三为密码。&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$con&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;判断数据库是否连接成功&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;die&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Could not connect: &amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_error&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;());&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;mysql_select_db&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;stu&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$con&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//选择数据库&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;$sql&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;SELECT * FROM stu_info &amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//定义sql语句&lt;/span&gt;
-
-&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$sql&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//执行sql语句&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;table border=&amp;#39;1&amp;#39;&amp;gt;//定义显示格式&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;&amp;lt;tr&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;&amp;lt;th&amp;gt;name&amp;lt;/th&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;&amp;lt;th&amp;gt;age&amp;lt;/th&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;s2&quot;&gt;&amp;lt;th&amp;gt;tel&amp;lt;/th&amp;gt;&lt;/span&gt;
-
-&lt;span class=&quot;s2&quot;&gt;&amp;lt;/tr&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$row&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;mysql_fetch_array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//循环读取值,判断是否到尾&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;tr&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;td&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;name&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/td&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;td&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;age&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/td&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;td&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;tel&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/td&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/tr&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
- &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;lt;/table&amp;gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;nb&quot;&gt;mysql_close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$con&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//关闭数据库&lt;/span&gt;
-&lt;span class=&quot;cp&quot;&gt;?&amp;gt;&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 </description>
     </item>
     
