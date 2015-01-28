@@ -1,0 +1,42 @@
+---
+layout: post
+title: nodejs第一个例子
+categories: 
+---
+{{ page.title}}
+
+##用git下载node.js最新版
+
+	git clone git://github.com/ry/node.git
+
+##或者直接下载源码
+	wget http://nodejs.org/dist/node-v0.8.2.tar.gz
+	tar -xf node-v0.8.2.tar.gz
+
+##开始编译安装node.js
+
+	cd node-v0.8.2
+	./configure
+	make
+	sudo make install
+
+###输入node –v 或者node –version可以查看node.js当前的版本
+
+###运行第一个node.js的程序
+
+###在主文件夹中创建example.js，编辑文本
+
+	var http = require('http');
+	  http.createServer(function (req, res) {
+	  res.writeHead(200, {'Content-Type': 'text/plain'});
+	  res.end('Hello Node.js');
+	}).listen(8124, "127.0.0.1");
+	console.log('Server running at http://127.0.0.1:8124/'); 
+
+###之后在命令行输入node example.js,
+
+### 打开浏览器输入http://127.0.0.1:8124/'
+
+###显示Hello Node.js
+
+###恭喜你你已经nodejs 入门了
