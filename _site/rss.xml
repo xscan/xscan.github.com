@@ -6,9 +6,62 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Sun, 01 Feb 2015 19:15:04 +0800</pubDate>
-    <lastBuildDate>Sun, 01 Feb 2015 19:15:04 +0800</lastBuildDate>
+    <pubDate>Wed, 04 Feb 2015 19:31:13 +0800</pubDate>
+    <lastBuildDate>Wed, 04 Feb 2015 19:31:13 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>搭建yeoman-bower+grunt前端流</title>
+      <link>place_your_blog_url_here/html5/2015/02/03/yeoman-bower-grunt.html</link>
+      <pubDate>03 Feb 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/html5/2015/02/03/yeoman-bower-grunt</guid>
+      <description>&lt;h2 id=&quot;section&quot;&gt;1.简介&lt;/h2&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;一个有八字胡的男人+一只澳大利亚的肥鸟+一头发怒的野猪在一起能触碰出什么火花呢？&lt;/h4&gt;
+&lt;h1&gt;
+&lt;img src=&quot;http://yeoman.io/assets/img/yeoman-02.6442.png&quot; alt=&quot;yo&quot; width=&quot;100px&quot; height=&quot;100px&quot; /&gt;+
+&lt;img src=&quot;http://segmentfault.com/img/bVcOG5&quot; alt=&quot;bower&quot; width=&quot;100px&quot; height=&quot;100px&quot; /&gt;+
+&lt;img src=&quot;http://segmentfault.com/img/bVcOG2&quot; alt=&quot;grunt&quot; width=&quot;100px&quot; height=&quot;100px&quot; /&gt;=?
+&lt;/h1&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;答案在下面&lt;/h3&gt;
+&lt;p&gt;前端工作流&lt;/p&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;以下下是我自己理解和到网上找的一些资料整合的&lt;/h3&gt;
+
+&lt;p&gt;yeoman可以方便web开发者快速构建出一个标准化结构的web项目流程。它不只是一个工具，是一个工作流程，这个工作流程包含了3个工具。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://yeoman.io/&quot;&gt;yeoman&lt;/a&gt; 下载框架（脚手架）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://bower.io/&quot;&gt;bower&lt;/a&gt;  下载插件（包管理器）&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.gruntjs.net/&quot;&gt;grunt&lt;/a&gt; 整和代码，测试代码，压缩代码（构建工具）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;2.前期工作&lt;/h2&gt;
+
+&lt;p&gt;（本人是在ubuntu14.04下 所以省略了npm的安装，windows自行下载安装）&lt;/p&gt;
+
+&lt;p&gt;先安装好我们需要的环境（-g 表示安装到全局变量）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install -g yo grunt-cli bower
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;3.构建项目&lt;/h2&gt;
+
+&lt;h3 id=&quot;yeoman-bowergruntwebapp&quot;&gt;yeoman-bower+grunt操作流程(以下用webapp库做例子)：&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir webapp （建立项目文件夹）
+cd webapp	（进入文件夹）
+npm install -g generator-webapp （安装webapp框架）
+yo webapp	（安装框架）
+npm install	（检查,下载package.json文件里的依赖包）
+bower install	（检查,下载bower.json文件里插件依赖包）
+grunt	(执行Gruntfile.js里面定义的任务)
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+    </item>
     
     <item>
       <title>jQuery开发插件</title>
@@ -1115,20 +1168,6 @@ db.tianyc03.find()
 db.tianyc03.find()
 { “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “teletek” ], “name” : “xtt” }&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>9月经历</title>
-      <link>place_your_blog_url_here/home/2014/10/05/yue.html</link>
-      <pubDate>05 Oct 2014</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/home/2014/10/05/yue</guid>
-      <description>&lt;h2 id=&quot;section&quot;&gt;大三了，时间一恍惚就过去了。&lt;/h2&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;今天中午到我妹这里吃饭感觉他们还是没什么变化的。一样的天真。菜还是那种味道。&lt;/h2&gt;
-
-&lt;h2 id=&quot;go-go&quot;&gt;到底应该追求什么东西呢！目标！Go Go&lt;/h2&gt;
 </description>
     </item>
     
