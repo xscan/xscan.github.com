@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-    <title>动态添加js</title>
+    <title>sublime编译c</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
@@ -90,28 +90,62 @@
     <div id="post">
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="20150115">动态添加js</h1>
-  <p>代码如下:</p>
+  <h1 id="post__title" data-identifier="20150205">sublime编译c</h1>
+  <p>sublime编译c</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">&quot;button&quot;</span> <span class="na">onclick=</span><span class="s">&quot;loadjs()&quot;</span><span class="nt">&gt;&lt;/button&gt;</span>
-<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">&quot;text/javascript&quot;</span><span class="nt">&gt;</span>
-<span class="kd">function</span> <span class="nx">loadjs</span><span class="p">(){</span>
-	<span class="kd">var</span> <span class="nx">oHead</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s1">&#39;HEAD&#39;</span><span class="p">).</span><span class="nx">item</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-            <span class="kd">var</span> <span class="nx">oScript</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">);</span>
-            <span class="nx">oScript</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&quot;text/javascript&quot;</span><span class="p">;</span>
-            <span class="nx">oScript</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s2">&quot;/userlist.js&quot;</span><span class="p">;</span>
-            <span class="nx">oHead</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">oScript</span><span class="p">);</span>
-<span class="p">}</span>
-      
-            <span class="nt">&lt;/script&gt;</span></code></pre></div>
+<h4 id="sublime-text-2---winmaclinux">Sublime Text 2 - 性感无比的代码编辑器！程序员必备神器！跨平台支持Win/Mac/Linux</h4>
 
+<p><img src="http://img.ithome.com/newsuploadfiles/2012/12/20121201_161916_734.png" alt="sublime" title="as" /></p>
+
+<h2 id="c">1.首先你得有C的编译环境（添加编译器到全局变量）</h2>
+
+<h2 id="sublime">2.添加 sublime的配置文件</h2>
+
+<pre><code>菜单-&gt;TOOLS&gt;Build System-&gt;New Build Ststem
+
+{
+"cmd" : ["gcc", "$file_name", "-o", "${file_base_name}"],//编译的命令
+"selector" : "source.c",//指定文件后缀为xxx.c的才运行这个命令
+"shell":false,
+"working_dir" : "$file_path",
+"variants": 
+	[ 
+		{ 
+		"name": "Run", 
+		"cmd": "${file_path}/${file_base_name}" //运行的命令
+		}
+	]
+}	
+保存为C.sublime-build
+</code></pre>
+
+<h2 id="section">3.编译运行</h2>
+<pre><code>3.1保存下列代码为hello.c
+
+	#include &lt;stdio.h&gt;
+	int main(void)
+	{
+	    printf("Hello World!\n");
+	    return 0;
+	}
+3.2
+Ctrl+B  编译代码
+Ctrl+Shift+B 运行代码
+（注意：先编译在运行）
+</code></pre>
+
+<h2 id="section-1">4.强大的插件</h2>
+
+<h3 id="emmet-">Emmet 前端神器（用过才知道）</h3>
+
+<p><a href="http://www.oschina.net/translate/20-powerful-sublimetext-plugins">sublime插件介绍</a></p>
 
 </article> <!-- end #post__content -->
 
 <div id="post__share">
-  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/home/2015/01/15/addjs.html&text=动态添加js" target="_blank"></a>
+  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/home/2015/02/05/sublime-c.html&text=sublime编译c" target="_blank"></a>
   <a id="icon-cc" class="fontello" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
-  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/home/2015/01/15/addjs.html&title=动态添加js" target="_blank"></a>
+  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/home/2015/02/05/sublime-c.html&title=sublime编译c" target="_blank"></a>
 </div> <!-- end #post__share -->
 
 <div id="disqus_thread">

@@ -6,9 +6,66 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Wed, 04 Feb 2015 19:31:13 +0800</pubDate>
-    <lastBuildDate>Wed, 04 Feb 2015 19:31:13 +0800</lastBuildDate>
+    <pubDate>Thu, 05 Feb 2015 14:52:34 +0800</pubDate>
+    <lastBuildDate>Thu, 05 Feb 2015 14:52:34 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>sublime编译c</title>
+      <link>place_your_blog_url_here/home/2015/02/05/sublime-c.html</link>
+      <pubDate>05 Feb 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/home/2015/02/05/sublime-c</guid>
+      <description>&lt;p&gt;sublime编译c&lt;/p&gt;
+
+&lt;h4 id=&quot;sublime-text-2---winmaclinux&quot;&gt;Sublime Text 2 - 性感无比的代码编辑器！程序员必备神器！跨平台支持Win/Mac/Linux&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://img.ithome.com/newsuploadfiles/2012/12/20121201_161916_734.png&quot; alt=&quot;sublime&quot; title=&quot;as&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;c&quot;&gt;1.首先你得有C的编译环境（添加编译器到全局变量）&lt;/h2&gt;
+
+&lt;h2 id=&quot;sublime&quot;&gt;2.添加 sublime的配置文件&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;菜单-&amp;gt;TOOLS&amp;gt;Build System-&amp;gt;New Build Ststem
+
+{
+&quot;cmd&quot; : [&quot;gcc&quot;, &quot;$file_name&quot;, &quot;-o&quot;, &quot;${file_base_name}&quot;],//编译的命令
+&quot;selector&quot; : &quot;source.c&quot;,//指定文件后缀为xxx.c的才运行这个命令
+&quot;shell&quot;:false,
+&quot;working_dir&quot; : &quot;$file_path&quot;,
+&quot;variants&quot;: 
+	[ 
+		{ 
+		&quot;name&quot;: &quot;Run&quot;, 
+		&quot;cmd&quot;: &quot;${file_path}/${file_base_name}&quot; //运行的命令
+		}
+	]
+}	
+保存为C.sublime-build
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;3.编译运行&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;3.1保存下列代码为hello.c
+
+	#include &amp;lt;stdio.h&amp;gt;
+	int main(void)
+	{
+	    printf(&quot;Hello World!\n&quot;);
+	    return 0;
+	}
+3.2
+Ctrl+B  编译代码
+Ctrl+Shift+B 运行代码
+（注意：先编译在运行）
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;4.强大的插件&lt;/h2&gt;
+
+&lt;h3 id=&quot;emmet-&quot;&gt;Emmet 前端神器（用过才知道）&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.oschina.net/translate/20-powerful-sublimetext-plugins&quot;&gt;sublime插件介绍&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>搭建yeoman-bower+grunt前端流</title>
@@ -782,392 +839,6 @@ sql
 	from stu_a,stu_b
 &lt;/code&gt;&lt;/pre&gt;
 
-</description>
-    </item>
-    
-    <item>
-      <title>Nosql数据库之MongoDB</title>
-      <link>place_your_blog_url_here/home/2014/10/22/mongodb.html</link>
-      <pubDate>22 Oct 2014</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/home/2014/10/22/mongodb</guid>
-      <description>&lt;p&gt;———————–原创——————–
-show dbs //列出服务器中所有数据库&lt;/p&gt;
-
-&lt;p&gt;use foo   //到foo数据库&lt;/p&gt;
-
-&lt;p&gt;show collections //列出foo数据库中的数据表&lt;/p&gt;
-
-&lt;p&gt;db.bar.find() //查询foo数据库中bar表中所有数据&lt;/p&gt;
-
-&lt;p&gt;db.bar.insert({“Name”:”张三”}) //插入Name为张三到bar表&lt;/p&gt;
-
-&lt;p&gt;例子
-一、—–插入—–&lt;/p&gt;
-
-&lt;p&gt;1.use foo //到foo数据库&lt;/p&gt;
-
-&lt;p&gt;2.db.bar.insert({“Name”:”张三”}) //插入列名为Name,内容为’张三’到bar表 &lt;/p&gt;
-
-&lt;p&gt;二、——查询——-
-use foo //到foo数据库
-db.bar.find() //查询foo数据库bar表中的全部内容。(注意:查询出来的数据为json格式的)&lt;/p&gt;
-
-&lt;p&gt;db.bar.find({“Name”:”张三”}) //查询foo数据库bar表中Name=张三的数据。&lt;/p&gt;
-
-&lt;p&gt;———————–网络资料———————-&lt;/p&gt;
-
-&lt;p&gt;Mongo客户端常用命令&lt;/p&gt;
-
-&lt;p&gt;一、数据库相关命令 &lt;br /&gt;
-1  show dbs // 列出所有数据库   &lt;br /&gt;
-2  use memo // 使用数据库memo。即使这个数据库不存在也可以执行，但该数据库不会立刻被新建，要等到执行了insert之类的操作时，才会建立这个数据库 &lt;br /&gt;
-  www.2cto.com  &lt;br /&gt;
-3   show collections // 列出当前数据库的collections  &lt;br /&gt;
-4   查看各collection的状态  db.printCollectionStats()  &lt;br /&gt;
-5   db // 显示当前数据库   &lt;br /&gt;
-6   show users // 列出用户  &lt;br /&gt;
-7   db.system.users.find()  // 列出用户    &lt;/p&gt;
-
-&lt;p&gt;8   db.removeUser(‘user1’) //删除用户 &lt;br /&gt;
-9   db.c1.drop()//删除集合c1 &lt;br /&gt;
-10  db.dropDatabase()//删除当前的数据库   二、安全与认证 &lt;br /&gt;
-1  use shine // 如果要root权限，就用admin库   &lt;br /&gt;
-  www.2cto.com&lt;br /&gt;
-2   db.addUser(“username”, “password”) // 普通权限，可读写   &lt;br /&gt;
-3  db.addUser(“username”, “password”, true)  // 只可读，不可写     &lt;/p&gt;
-
-&lt;p&gt;4   db.system.users.remove({user: username}) // 删除用户     1   db.c1.save({name:”zhangsan”,age:18}) //没有写主键，系统会自动生成一个主键，主键名为_id，    2 .每个MongoDB的document都有一个_id字段作为它的第一个属性，这个值通常是一个BSON对象id，因此，这个id对于集合中的每个成员 都是唯一的，如果用户插入一个document没有提供一个id，数据库将自动生成一个id，并存储在_id字段。   &lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;db.c1.save({_id:1,name:”lisi”,age:22})//自己填写id主键值，id主键值可以是字符串类型，也可以是数字类型   &lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;db.c1.save({“name” : “MongoDB”,”type” : “database”,”count” : 1,”info” : {x : 203,y : 102}})       四、创建索引： &lt;br /&gt;
-1   coll.ensureIndex({productid:1}) // 在productid上建立普通索引   &lt;br /&gt;
-2   coll.ensureIndex({district:1, plate:1}) // 多字段索引   &lt;br /&gt;
-3   coll.ensureIndex({productid:1}, {unique:true}) // 唯一索引   &lt;br /&gt;
-4   coll.ensureIndex({productid:1}, {unique:true, dropDups:true|) // 建索引时，如果遇到索引字段值已经出现过的情况，则删除重复记录     &lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;5   coll.getIndexes() // 查看索引   &lt;br /&gt;
-6   coll.dropIndex({productid:1}) // 删除单个索引     1.  db.coll.find() // select * from coll  &lt;br /&gt;
-2.  db.coll.find().limit(10) // select * from coll limit 10  &lt;br /&gt;
-3.  db.coll.find().sort({x:1}) // select * from coll order by x asc  &lt;br /&gt;
-4.  db.coll.find().sort({x:-1}) // select * from coll order by x desc  &lt;br /&gt;
-5.  db.coll.find().sort({x:1}).skip(5).limit(10) // select * from coll order by x asc limit 5, 10    &lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;db.coll.find({x:10}) // select * from coll where x = 10    &lt;/li&gt;
-  &lt;li&gt;db.coll.find({x: {$lt:10}}) // select * from coll where x &amp;lt;= 10    &lt;/li&gt;
-  &lt;li&gt;db.coll.find({}, {y:true}) // select y from coll    &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;通过游标访问数据&lt;br /&gt;
-.&amp;gt; var cursor = db.collect1.find();&lt;br /&gt;
-&amp;gt; while(cursor.hasNext()) printjson(cursor.next())&lt;br /&gt;
-当数据超过20行时候，使用it命令查看更多数据      通过forEach&lt;br /&gt;
-10&amp;gt; db.collect1.find().forEach(printjson)  &lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;在mongo shell中，你可以将游标认为是数组&lt;br /&gt;
-12&amp;gt; var cursor =db.collect1.find();&lt;br /&gt;
-13.&amp;gt; printjson(cursor[4])&lt;br /&gt;
-14{ “_id” : ObjectId(“4c691e72ed2a47b462dfa806”), “x” : 4, “y” : 3 }&lt;br /&gt;
-使用这种方式存取需要注意的是，在cursor[4]之前的所有数据都会同时被加载到内存，对于很大的结果集，这样操作是不恰当的，会导致内存溢出，当查询巨大数据量大时候，游标应当作为迭代器使用。
- www.2cto.com&lt;br /&gt;
-SQL语句不能做到的,mongo也可以做到  &lt;/li&gt;
-  &lt;li&gt;coll.find({“address.city”:”gz”}) // 搜索嵌套文档address中city值为gz的记录    &lt;/li&gt;
-  &lt;li&gt;coll.find({likes:”math”}) // 搜索数组    &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;coll.ensureIndex({“address.city”:1}) // 在嵌套文档的字段上建   1.  db.user.update({uid:1},{$set:{age:26}}) //update user set age=26 where uid=1  &lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;db.user.update({uid:1},{$inc:{age:1}}) //update user set age=age+1 where uid=1   1.db.user.delete({uid:1})//delete user where uid=1 
-2.db.Position.remove({“id”:10}) //delete * from Position where id=10 1.  // json或csv格式，每次一个collection     &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;mongoexport -d producttrade -c basic -o /home/data/mongo_backup/producttrade_100504.json  &lt;br /&gt;
-145.3.  mongoimport -d producttrade -c basic –drop /home/data/mongo_backup/producttrade_100504.json      // 二进制数据格式，常用于备份、还原   &lt;br /&gt;
-2  mongodump -d shine -o /home/data/mongo_backup   &lt;br /&gt;
-3  mongorestore -d shine –drop /home/data/mongo_backup/shine 
-———————————————&lt;/p&gt;
-
-&lt;p&gt;shell#查询
-查询 name = “bruce” 的数据
-db.users.find({ name : “bruce” });&lt;/p&gt;
-
-&lt;p&gt;条件操作符
-$gt : &amp;gt;
-$lt : &amp;lt;
-$gte: &amp;gt;=
-$lte: &amp;lt;=
-$ne : !=、&amp;lt;&amp;gt;
-$in : in
-$nin: not in
-$all: all
-$not: 反匹配(1.3.3及以上版本)&lt;/p&gt;
-
-&lt;p&gt;查询 name &amp;lt;&amp;gt; “bruce” and age &amp;gt;= 18 的数据
-db.users.find({name: {$ne: “bruce”}, age: {$gte: 18}});&lt;/p&gt;
-
-&lt;p&gt;查询 creation_date &amp;gt; ‘2010-01-01’ and creation_date &amp;lt;= ‘2010-12-31’ 的数据
-db.users.find({creation_date:{$gt:new Date(2010,0,1), $lte:new Date(2010,11,31)});&lt;/p&gt;
-
-&lt;p&gt;查询 age in (20,22,24,26) 的数据
-db.users.find({age: {$in: [20,22,24,26]}});&lt;/p&gt;
-
-&lt;p&gt;查询 age取模10等于0 的数据
-db.users.find(‘this.age % 10 == 0’);
-或者
-db.users.find({age : {$mod : [10, 0]}});&lt;/p&gt;
-
-&lt;p&gt;匹配所有
-db.users.find({favorite_number : {$all : [6, 8]}});
-可以查询出{name: ‘David’, age: 26, favorite_number: [ 6, 8, 9 ] }
-可以不查询出{name: ‘David’, age: 26, favorite_number: [ 6, 7, 9 ] }&lt;/p&gt;
-
-&lt;p&gt;查询不匹配name=B&lt;em&gt;带头的记录
-db.users.find({name: {$not: /^B.&lt;/em&gt;/}});
-查询 age取模10不等于0 的数据
-db.users.find({age : {$not: {$mod : [10, 0]}}});&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;返回部分字段&lt;/h1&gt;
-&lt;p&gt;选择返回age和_id字段(_id字段总是会被返回)
-db.users.find({}, {age:1});
-db.users.find({}, {age:3});
-db.users.find({}, {age:true});
-db.users.find({ name : “bruce” }, {age:1});
-0为false, 非0为true&lt;/p&gt;
-
-&lt;p&gt;选择返回age、address和_id字段
-db.users.find({ name : “bruce” }, {age:1, address:1});&lt;/p&gt;
-
-&lt;p&gt;排除返回age、address和_id字段
-db.users.find({}, {age:0, address:false});
-db.users.find({ name : “bruce” }, {age:0, address:false});&lt;/p&gt;
-
-&lt;p&gt;数组元素个数判断
-对于{name: ‘David’, age: 26, favorite_number: [ 6, 7, 9 ] }记录
-匹配db.users.find({favorite_number: {$size: 3}});
-不匹配db.users.find({favorite_number: {$size: 2}});&lt;/p&gt;
-
-&lt;p&gt;$exists判断字段是否存在
-查询所有存在name字段的记录
-db.users.find({name: {$exists: true}});
-查询所有不存在phone字段的记录
-db.users.find({phone: {$exists: false}});&lt;/p&gt;
-
-&lt;p&gt;$type判断字段类型
-查询所有name字段是字符类型的
-db.users.find({name: {$type: 2}});
-查询所有age字段是整型的
-db.users.find({age: {$type: 16}});&lt;/p&gt;
-
-&lt;p&gt;对于字符字段，可以使用正则表达式
-查询以字母b或者B带头的所有记录
-db.users.find({name: /^b.*/i});&lt;/p&gt;
-
-&lt;p&gt;$elemMatch(1.3.1及以上版本)
-为数组的字段中匹配其中某个元素&lt;/p&gt;
-
-&lt;p&gt;Javascript查询和$where查询
-查询 age &amp;gt; 18 的记录，以下查询都一样
-db.users.find({age: {$gt: 18}});
-db.users.find({$where: “this.age &amp;gt; 18”});
-db.users.find(“this.age &amp;gt; 18”);
-f = function() {return this.age &amp;gt; 18} db.users.find(f);&lt;/p&gt;
-
-&lt;p&gt;排序sort()
-以年龄升序asc
-db.users.find().sort({age: 1});
-以年龄降序desc
-db.users.find().sort({age: -1});&lt;/p&gt;
-
-&lt;p&gt;限制返回记录数量limit()
-返回5条记录
-db.users.find().limit(5);
-返回3条记录并打印信息
-db.users.find().limit(3).forEach(function(user) {print(‘my age is ‘ + user.age)});
-结果
-my age is 18
-my age is 19
-my age is 20&lt;/p&gt;
-
-&lt;p&gt;限制返回记录的开始点skip()
-从第3条记录开始，返回5条记录(limit 3, 5)
-db.users.find().skip(3).limit(5);&lt;/p&gt;
-
-&lt;p&gt;查询记录条数count()
-db.users.find().count();
-db.users.find({age:18}).count();
-以下返回的不是5，而是user表中所有的记录数量
-db.users.find().skip(10).limit(5).count();
-如果要返回限制之后的记录数量，要使用count(true)或者count(非0)
-db.users.find().skip(10).limit(5).count(true);&lt;/p&gt;
-
-&lt;p&gt;分组group()
-假设test表只有以下一条数据
-{ domain: “www.mongodb.org”
-, invoked_at: {d:”2009-11-03”, t:”17:14:05”}
-, response_time: 0.05
-, http_action: “GET /display/DOCS/Aggregation”
-}
-使用group统计test表11月份的数据count:count(*)、total_time:sum(response_time)、 avg_time:total_time/count;
-db.test.group(
-{ cond: {“invoked_at.d”: {$gt: “2009-11”, $lt: “2009-12”}}
-, key: {http_action: true}
-, initial: {count: 0, total_time:0}
-, reduce: function(doc, out){ out.count++; out.total_time+=doc.response_time }
-, finalize: function(out){ out.avg_time = out.total_time / out.count }
-} );&lt;/p&gt;
-
-&lt;p&gt;[
-{
-“http_action” : “GET /display/DOCS/Aggregation”,
-“count” : 1,
-“total_time” : 0.05,
-“avg_time” : 0.05
-}
-]
-——————-update———————-
-除了查询条件，还可以使用修改器对文档进行更新。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$inc&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “name” : “xtt”, “age” : 11 }
-db.tianyc03.update({name:’xtt’,age:11},{‘$inc’:{age:5}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “name” : “xtt”, “age” : 16 }&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1 id=&quot;inc&quot;&gt;$inc还可以添加列。&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc04.find()
-{ “_id” : ObjectId(“510c83ad13d7e50c2281b048”), “wc” : 1 }
-db.tianyc04.update({wc:1},{$inc:{score:50}})
-db.tianyc04.find()
-{ “_id” : ObjectId(“510c83ad13d7e50c2281b048”), “score” : 50, “wc” : 1 }&lt;/p&gt;
-
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$set&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;用来指定一个键的值，若该键不存在，则创建。如果需要删除该键，使用$unset。&lt;/p&gt;
-
-&lt;h1 id=&quot;sex&quot;&gt;新增加列sex&lt;/h1&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.update({name:’xtt’,age:16},{$set:{sex:’m’}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “name” : “xtt”, “sex” : “m” }
-#修改列sex
-db.tianyc03.update({name:’xtt’,age:16},{$set:{sex:’male’}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “name” : “xtt”, “sex” : “male” }
-#改变列sex数据类型
-db.tianyc03.update({name:’xtt’,age:16},{$set:{sex:1}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “name” : “xtt”, “sex” : 1 }
-#删除列sex
-db.tianyc03.update({name:’xtt’,age:16},{$unset:{sex:1}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “name” : “xtt” }&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$push&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;用来增加数组。若没有改列，则会自动增加。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “name” : “xtt” }&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.update({‘name’:’xtt’},{$push:{companies:’neu’}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “neu” ], “name” : “xtt” }&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.update({‘name’:’xtt’},{$push:{companies:’alibaba’}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “neu”, “alibaba” ], “name” : “xtt” }&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$addToSet&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;pushaddtoset&quot;&gt;push操作不会检查数组中元素是否重复，如果需要将不重复的数据加入数组，需要使用$addToSet&lt;/h1&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.update({‘name’:’xtt’},{$addToSet:{companies:’alibaba’}})&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “neu”, “alibaba”, “alibaba” ], “name” : “xtt” }
-db.tianyc03.update({‘name’:’xtt’},{$addToSet:{companies:’congxing’}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “neu”, “alibaba”, “alibaba”, “congxing” ], “name” : “xtt” }
-db.tianyc03.update({‘name’:’xtt’},{$addToSet:{companies:’congxing’}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “neu”, “alibaba”, “alibaba”, “congxing” ], “name” : “xtt” }&lt;/p&gt;
-
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$pop&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;通过$pop可以从数组中移除数据。此时数据被看成是一个队列。使用{$pop:{key:1}}将从队列末尾移除元素，使用{$pop:{key:-1}}将从队列开头移除元素。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.update({‘name’:’xtt’},{$addToSet:{companies:[‘c1’,’c2’]}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “neu”, “alibaba”, “alibaba”, “congxing”, [ “c1”, “c2” ] ], “name” : “xtt” }&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.update({‘name’:’xtt’},{$pop:{companies:1}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “neu”, “alibaba”, “alibaba”, “congxing” ], “name” : “xtt” }&lt;/p&gt;
-
-  &lt;p&gt;db.tianyc03.update({‘name’:’xtt’},{$pop:{companies:-1}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “alibaba”, “alibaba”, “congxing” ], “name” : “xtt” }&lt;/p&gt;
-
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;$pull&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;除了 $pop，也可以使用 $pull 来删除数组中的元素，此时可以根据元素值进行匹配，将匹配上的元素全部删除。&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.update({‘name’:’xtt’},{$addToSet:{companies:’teletek’}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “alibaba”, “alibaba”, “congxing”, “teletek” ], “name” : “xtt” }
-db.tianyc03.update({},{$pull:{companies:’congxing’}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “alibaba”, “alibaba”, “teletek” ], “name” : “xtt” }&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;db.tianyc03.update({},{$pull:{companies:’alibaba’}})
-db.tianyc03.find()
-{ “_id” : ObjectId(“50ea6b6f12729d90ce6e341b”), “age” : 16, “companies” : [ “teletek” ], “name” : “xtt” }&lt;/p&gt;
-&lt;/blockquote&gt;
 </description>
     </item>
     

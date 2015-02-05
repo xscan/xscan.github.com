@@ -1,0 +1,53 @@
+---
+layout: post
+title: sublime编译c
+categories: home
+---
+{{ page.title}}
+
+####Sublime Text 2 - 性感无比的代码编辑器！程序员必备神器！跨平台支持Win/Mac/Linux
+
+
+![sublime](http://img.ithome.com/newsuploadfiles/2012/12/20121201_161916_734.png "as")
+
+##1.首先你得有C的编译环境（添加编译器到全局变量）
+
+##2.添加 sublime的配置文件
+
+
+	菜单->TOOLS>Build System->New Build Ststem
+
+	{
+	"cmd" : ["gcc", "$file_name", "-o", "${file_base_name}"],//编译的命令
+	"selector" : "source.c",//指定文件后缀为xxx.c的才运行这个命令
+	"shell":false,
+	"working_dir" : "$file_path",
+	"variants": 
+		[ 
+			{ 
+			"name": "Run", 
+			"cmd": "${file_path}/${file_base_name}" //运行的命令
+			}
+		]
+	}	
+	保存为C.sublime-build
+
+##3.编译运行
+	3.1保存下列代码为hello.c
+
+		#include <stdio.h>
+		int main(void)
+		{
+		    printf("Hello World!\n");
+		    return 0;
+		}
+	3.2
+	Ctrl+B  编译代码
+	Ctrl+Shift+B 运行代码
+	（注意：先编译在运行）
+
+##4.强大的插件
+
+###Emmet 前端神器（用过才知道）
+
+[sublime插件介绍](http://www.oschina.net/translate/20-powerful-sublimetext-plugins)
