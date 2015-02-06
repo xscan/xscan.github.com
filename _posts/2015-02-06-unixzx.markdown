@@ -3,8 +3,9 @@ layout: post
 title: Unix哲学
 categories: home
 ---
-{{ page.title}}
+
 ##Unix哲学
+
 
 	1 模块化原则：使用简洁的接口拼合简单的部件。
 

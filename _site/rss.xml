@@ -6,8 +6,8 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Fri, 06 Feb 2015 15:57:14 +0800</pubDate>
-    <lastBuildDate>Fri, 06 Feb 2015 15:57:14 +0800</lastBuildDate>
+    <pubDate>Fri, 06 Feb 2015 16:27:43 +0800</pubDate>
+    <lastBuildDate>Fri, 06 Feb 2015 16:27:43 +0800</lastBuildDate>
 
     
     <item>
@@ -16,8 +16,7 @@
       <pubDate>06 Feb 2015</pubDate>
       <author>place_your_name_here</author>
       <guid>place_your_blog_url_here/home/2015/02/06/unixzx</guid>
-      <description>&lt;p&gt;Unix哲学
-##Unix哲学&lt;/p&gt;
+      <description>&lt;h2 id=&quot;unix&quot;&gt;Unix哲学&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;1 模块化原则：使用简洁的接口拼合简单的部件。
 
@@ -54,7 +53,7 @@
 17 扩展原则： 设计着眼未来，未来总比预想的来的快。
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&quot;unix&quot;&gt;应用Unix哲学&lt;/h2&gt;
+&lt;h2 id=&quot;unix-1&quot;&gt;应用Unix哲学&lt;/h2&gt;
 
 &lt;pre&gt;&lt;code&gt;* 只要可行，一切都应该做成与来源和目标无关的过滤器。
 
