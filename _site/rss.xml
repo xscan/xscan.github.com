@@ -6,9 +6,76 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Thu, 05 Feb 2015 14:52:34 +0800</pubDate>
-    <lastBuildDate>Thu, 05 Feb 2015 14:52:34 +0800</lastBuildDate>
+    <pubDate>Fri, 06 Feb 2015 15:57:14 +0800</pubDate>
+    <lastBuildDate>Fri, 06 Feb 2015 15:57:14 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>Unix哲学</title>
+      <link>place_your_blog_url_here/home/2015/02/06/unixzx.html</link>
+      <pubDate>06 Feb 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/home/2015/02/06/unixzx</guid>
+      <description>&lt;p&gt;Unix哲学
+##Unix哲学&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;1 模块化原则：使用简洁的接口拼合简单的部件。
+
+2 清晰性原则：清晰胜于机巧。
+
+3 整合化原则： 设计时考虑拼接组合。
+
+4 分离性原则： 策略同机制分离；接口同引擎分离。
+
+5 简单化原则： 设计要简洁，复杂度能低则低。
+
+6 吝啬性原则： 除非确无他法，不要编写庞大的程序。
+
+7 透明化原则： 设计要可见，以便审查和调试。
+
+8 健壮性原则： 健壮源于透明和简洁。
+
+9 表示原则：把知识叠入数据以求逻辑质朴而健壮。
+
+10 通俗原则： 接口设计避免标新立异。
+
+11 缄默原则： 当一个程序没有什么好说的，就沉默。
+
+12 补救原则： 出现异常时，马上退出并给出足够错误信息。
+
+13 经济原则： 宁花机器一分，不花程序员一秒。
+
+14 生产原则： 避免手工hack操作；尽可能让程序完成编程工作。
+
+15 优化原则： 雕琢之前先要有原型，跑之前先学会走。
+
+16 多样原则： 决不相信所谓“不二法门”的断言。
+
+17 扩展原则： 设计着眼未来，未来总比预想的来的快。
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;unix&quot;&gt;应用Unix哲学&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;* 只要可行，一切都应该做成与来源和目标无关的过滤器。
+
+* 数据流应尽可能文本化（这样可以使用标准工具来查看和过滤）。
+
+* 数据库部署和应用协议应尽可能文本化（让人可以阅读和编辑）。
+
+* 复杂的前端（用户界面）和后端应该泾渭分明。
+
+* 如果可能，用C编写前，先用解释性语言搭建原型。
+
+* 当且仅当只用一门语言编程会提高程序复杂度时，混用语言编程才比单一语言编程来得好。
+
+* 宽收严发（对接收的东西要包容，对输出的东西要严格）。
+
+* 过滤时，不需要丢弃的信息决不丢。
+
+* 小就是美。在确保完成任务的基础上，程序功能尽可能少。
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>sublime编译c</title>
@@ -784,60 +851,6 @@ id: &amp;#39;asd&amp;#39;//提交的数据
  function(data, status) {//回调函数
 	alert(data.message)
  });&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-    </item>
-    
-    <item>
-      <title>Linq例子</title>
-      <link>place_your_blog_url_here/home/2014/10/23/linq.html</link>
-      <pubDate>23 Oct 2014</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/home/2014/10/23/linq</guid>
-      <description>&lt;p&gt;LINQ，语言集成查询（Language Integrated Query）是一组用于c#和Visual Basic语言的扩展。它允许编写C#或者Visual Basic代码以查询数据库相同的方式操作内存数据。&lt;/p&gt;
-
-&lt;h1 id=&quot;linqsql&quot;&gt;一，linq对应sql的代码&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;1.查询stu_a表全部数据	
-linq 
-	from a in stu_a
-	select a
-sql 
-	select ×
-	from stu_a
-2.查询stu_a表id=1的数据
-linq 
-	from a in stu_a
-	where a.id==1
-	select a
-sql 
-	select ×
-	from stu_a
-	where id=1
-3.查询表赋值别名列e
-linq 
-	from a in stu_a
-	select new
-	{
-		序号=a.id,
-		姓名=a.name
-	}
-sql 
-	select id as '序号',name as '姓名'
-	from stu_a
-3查询多表数据
-linq 
-	from a in stu_a
-	join b in stu_b
-	on a.ID equals b.ID
-	select new
-	{
-		序号=a.id,
-		姓名=b.name
-	}
-sql 
-	select stu_a.id as '序号',stu_b.name as '姓名'
-	from stu_a,stu_b
-&lt;/code&gt;&lt;/pre&gt;
 
 </description>
     </item>
