@@ -6,9 +6,23 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Fri, 06 Feb 2015 16:27:43 +0800</pubDate>
-    <lastBuildDate>Fri, 06 Feb 2015 16:27:43 +0800</lastBuildDate>
+    <pubDate>Sat, 07 Feb 2015 10:04:30 +0800</pubDate>
+    <lastBuildDate>Sat, 07 Feb 2015 10:04:30 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>SqlJoin图解</title>
+      <link>place_your_blog_url_here/home/2015/02/07/sqljoin.html</link>
+      <pubDate>07 Feb 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/home/2015/02/07/sqljoin</guid>
+      <description>&lt;p&gt;SqlJoin图解&lt;/p&gt;
+
+&lt;h2 id=&quot;sql-join-&quot;&gt;以下是Sql Join 用法想对应的集合图&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://jbcdn2.b0.upaiyun.com/2013/05/SQL-Joins.jpg&quot; alt=&quot;join&quot; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Unix哲学</title>
@@ -832,24 +846,6 @@ class UserAction extends Action{
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
       
             &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-</description>
-    </item>
-    
-    <item>
-      <title>jquerypost提交方法</title>
-      <link>place_your_blog_url_here/home/2015/01/14/jquerypost.html</link>
-      <pubDate>14 Jan 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/home/2015/01/14/jquerypost</guid>
-      <description>&lt;p&gt;jquerypost提交方法&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;$.post(&amp;quot;{:U(&amp;#39;Admin/Messmassage/SendMsg&amp;#39;)}&amp;quot;, {//提交的Url
-id: &amp;#39;asd&amp;#39;//提交的数据
-},
- function(data, status) {//回调函数
-	alert(data.message)
- });&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
     </item>
