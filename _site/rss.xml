@@ -6,9 +6,121 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Sat, 07 Feb 2015 10:04:30 +0800</pubDate>
-    <lastBuildDate>Sat, 07 Feb 2015 10:04:30 +0800</lastBuildDate>
+    <pubDate>Mon, 09 Feb 2015 15:07:21 +0800</pubDate>
+    <lastBuildDate>Mon, 09 Feb 2015 15:07:21 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>Grunt-Less插件(1)</title>
+      <link>place_your_blog_url_here/home/2015/02/09/gruntless.html</link>
+      <pubDate>09 Feb 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/home/2015/02/09/gruntless</guid>
+      <description>&lt;p&gt;Grunt-Less插件(1)&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;项目结构&lt;/h2&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;编译前&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;.
+├── css
+│   └── test.less
+├── Gruntfile.js
+├── node_modules
+│   ├── grunt
+│   ├── grunt-contrib-less
+│   └── l
+└── package.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;编译后&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;	.
+	├── css
+	│   ├── test.css
+	│   ├── test.less
+	│   └── test-min.css
+	├── Gruntfile.js
+	├── node_modules
+	│   ├── grunt
+	│   ├── grunt-contrib-less
+	│   └── l
+	└── package.json
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;流程&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;1 新建项目目录
+
+mkdir less
+cd less
+
+2 建立package.json和Gruntfile.js文件
+
+* 新建package.json插件下载配置文件。。这里一路确定下去
+* 安装less编译插件，--save-dev 添加这个插件到package.json文件里面
+* 新建Gruntfile.js文件
+* 打开Gruntfile.js
+
+npm init 
+
+npm install grunt-contrib-less --save-dev 
+
+&amp;gt;Gruntfile.js
+
+sudo gedit Gruntfile.js
+
+//写入任务配置如下
+	module.exports = function (grunt) {
+	//编写任务
+	  grunt.initConfig({
+	    less: {
+	      compile: {
+	        files: {
+	          'css/test.css': 'css/test.less'
+	        }
+	      },
+	      compress: {
+	        files: {
+	          'css/test-min.css': 'css/test.css'
+	        },
+	        options: {
+	          compress: true
+	        }
+	      }
+	    }
+	  });
+	  // 载入插件
+	  grunt.loadNpmTasks('grunt-contrib-less');
+	//定义默认任务
+	  grunt.registerTask('default', ['less']);
+	};
+
+	3 建立编译输出文件夹
+
+	mkdir css
+	cd css
+	&amp;gt;test.less
+	  //test.less内容
+		@base: #f938ab;
+
+		.box-shadow(@style, @c) when (iscolor(@c)) {
+		  -webkit-box-shadow: @style @c;
+		  box-shadow:         @style @c;
+		}
+		.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+		  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+		}
+		.box {
+		  color: saturate(@base, 5%);
+		  border-color: lighten(@base, 30%);
+		  div { .box-shadow(0 0 5px, 30%) }
+		}		
+
+	4 执行Gruntfile.js定义的任务
+	grunt less
+&lt;/code&gt;&lt;/pre&gt;
+
+</description>
+    </item>
     
     <item>
       <title>SqlJoin图解</title>
@@ -823,29 +935,6 @@ class UserAction extends Action{
 
 安好即可！
 &lt;/code&gt;&lt;/pre&gt;
-
-</description>
-    </item>
-    
-    <item>
-      <title>动态添加js</title>
-      <link>place_your_blog_url_here/home/2015/01/15/addjs.html</link>
-      <pubDate>15 Jan 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/home/2015/01/15/addjs</guid>
-      <description>&lt;p&gt;代码如下:&lt;/p&gt;
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;button&amp;quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;onclick=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;loadjs()&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;loadjs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
-	&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oHead&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementsByTagName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;HEAD&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oScript&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;script&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;oScript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;oScript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;/userlist.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-            &lt;span class=&quot;nx&quot;&gt;oHead&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;appendChild&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;oScript&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-      
-            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 </description>
     </item>

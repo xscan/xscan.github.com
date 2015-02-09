@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-    <title>搭建yeoman-bower+grunt前端流</title>
+    <title>Grunt-Less插件(1)</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
@@ -96,58 +96,117 @@
     <div id="post">
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="20150203">搭建yeoman-bower+grunt前端流</h1>
-  <h2 id="section">1.简介</h2>
+  <h1 id="post__title" data-identifier="20150209">Grunt-Less插件(1)</h1>
+  <p>Grunt-Less插件(1)</p>
 
-<h4 id="section-1">一个有八字胡的男人+一只澳大利亚的肥鸟+一头发怒的野猪在一起能触碰出什么火花呢？</h4>
-<h1>
-<img src="http://yeoman.io/assets/img/yeoman-02.6442.png" alt="yo" width="100px" height="100px" />+
-<img src="http://segmentfault.com/img/bVcOG5" alt="bower" width="100px" height="100px" />+
-<img src="http://segmentfault.com/img/bVcOG2" alt="grunt" width="100px" height="100px" />=?
-</h1>
+<h2 id="section">项目结构</h2>
 
-<h3 id="section-2">答案在下面</h3>
-<p>前端工作流</p>
-
-<h3 id="section-3">以下下是我自己理解和到网上找的一些资料整合的</h3>
-
-<p>yeoman可以方便web开发者快速构建出一个标准化结构的web项目流程。它不只是一个工具，是一个工作流程，这个工作流程包含了3个工具。</p>
-
-<ul>
-  <li><a href="http://yeoman.io/">yeoman</a> 下载框架（脚手架）</li>
-  <li><a href="http://bower.io/">bower</a>  下载插件（包管理器）</li>
-  <li><a href="http://www.gruntjs.net/">grunt</a> 整和代码，测试代码，压缩代码（构建工具）</li>
-</ul>
-
-<h2 id="section-4">2.前期工作</h2>
-
-<p>（本人是在ubuntu14.04下 所以省略了npm的安装，windows自行下载安装）</p>
-
-<p>先安装好我们需要的环境（-g 表示安装到全局变量）</p>
-
-<pre><code>npm install -g yo grunt-cli bower
+<h3 id="section-1">编译前</h3>
+<pre><code>.
+├── css
+│   └── test.less
+├── Gruntfile.js
+├── node_modules
+│   ├── grunt
+│   ├── grunt-contrib-less
+│   └── l
+└── package.json
 </code></pre>
 
-<h2 id="section-5">3.构建项目</h2>
+<h3 id="section-2">编译后</h3>
+<pre><code>	.
+	├── css
+	│   ├── test.css
+	│   ├── test.less
+	│   └── test-min.css
+	├── Gruntfile.js
+	├── node_modules
+	│   ├── grunt
+	│   ├── grunt-contrib-less
+	│   └── l
+	└── package.json
+</code></pre>
 
-<h3 id="yeoman-bowergruntwebapp">yeoman-bower+grunt操作流程(以下用webapp库做例子)：</h3>
+<h2 id="section-3">流程</h2>
 
-<pre><code>mkdir webapp （建立项目文件夹）
-cd webapp	（进入文件夹）
-npm install -g generator-webapp （安装webapp框架）
-yo webapp	（安装框架）
-npm install	（检查,下载package.json文件里的依赖包）
-bower install	（检查,下载bower.json文件里插件依赖包）
-grunt	(执行Gruntfile.js里面定义的任务)
+<pre><code>1 新建项目目录
+
+mkdir less
+cd less
+
+2 建立package.json和Gruntfile.js文件
+
+* 新建package.json插件下载配置文件。。这里一路确定下去
+* 安装less编译插件，--save-dev 添加这个插件到package.json文件里面
+* 新建Gruntfile.js文件
+* 打开Gruntfile.js
+
+npm init 
+
+npm install grunt-contrib-less --save-dev 
+
+&gt;Gruntfile.js
+
+sudo gedit Gruntfile.js
+
+//写入任务配置如下
+	module.exports = function (grunt) {
+	//编写任务
+	  grunt.initConfig({
+	    less: {
+	      compile: {
+	        files: {
+	          'css/test.css': 'css/test.less'
+	        }
+	      },
+	      compress: {
+	        files: {
+	          'css/test-min.css': 'css/test.css'
+	        },
+	        options: {
+	          compress: true
+	        }
+	      }
+	    }
+	  });
+	  // 载入插件
+	  grunt.loadNpmTasks('grunt-contrib-less');
+	//定义默认任务
+	  grunt.registerTask('default', ['less']);
+	};
+
+	3 建立编译输出文件夹
+
+	mkdir css
+	cd css
+	&gt;test.less
+	  //test.less内容
+		@base: #f938ab;
+
+		.box-shadow(@style, @c) when (iscolor(@c)) {
+		  -webkit-box-shadow: @style @c;
+		  box-shadow:         @style @c;
+		}
+		.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+		  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+		}
+		.box {
+		  color: saturate(@base, 5%);
+		  border-color: lighten(@base, 30%);
+		  div { .box-shadow(0 0 5px, 30%) }
+		}		
+
+	4 执行Gruntfile.js定义的任务
+	grunt less
 </code></pre>
 
 
 </article> <!-- end #post__content -->
 
 <div id="post__share">
-  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/html5/2015/02/03/yeoman-bower-grunt.html&text=搭建yeoman-bower+grunt前端流" target="_blank"></a>
+  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/home/2015/02/09/gruntless.html&text=Grunt-Less插件(1)" target="_blank"></a>
   <a id="icon-cc" class="fontello" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
-  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/html5/2015/02/03/yeoman-bower-grunt.html&title=搭建yeoman-bower+grunt前端流" target="_blank"></a>
+  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/home/2015/02/09/gruntless.html&title=Grunt-Less插件(1)" target="_blank"></a>
 </div> <!-- end #post__share -->
 
 <div id="disqus_thread">
