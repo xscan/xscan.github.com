@@ -6,9 +6,67 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Mon, 09 Feb 2015 15:07:21 +0800</pubDate>
-    <lastBuildDate>Mon, 09 Feb 2015 15:07:21 +0800</lastBuildDate>
+    <pubDate>Wed, 18 Feb 2015 12:32:33 +0800</pubDate>
+    <lastBuildDate>Wed, 18 Feb 2015 12:32:33 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>linux-ssh-rsync</title>
+      <link>place_your_blog_url_here/home/2015/02/18/linuxssh.html</link>
+      <pubDate>18 Feb 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/home/2015/02/18/linuxssh</guid>
+      <description>&lt;p&gt;linux-ssh-rsync&lt;/p&gt;
+
+&lt;h2 id=&quot;ssh&quot;&gt;1.ssh登入远程机器&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;xscan@xscan-Aspire-V5-472G:~$ ssh git@192.168.1.130
+git@192.168.1.130's password: 
+Linux debian 3.2.0-4-amd64 #1 SMP Debian 3.2.65-1+deb7u1 x86_64
+
+The programs included with the Debian GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Wed Feb 18 11:26:19 2015 from xscan-aspire-v5-472g.local
+git@debian:~$
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;ssh-1&quot;&gt;2.ssh密钥上传到服务器&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh-keygen
+一路回车下去
+cd ~/.ssh
+进入当前用户目录
+ssh-copy-id git@192.168.1.130
+上传密钥到服务器
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;rsync&quot;&gt;3.rsync远程同步备份&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;3.1）上传本地文件夹到服务器例子
+rsync -r mydir git@192.168.1.1:
+
+3.2）同步本地和服务器中增加删除的文件
+#检查服务器和本地不同文件的信息（注意：上面的检查嫁了一个&quot;-n&quot;参数）	
+rsync -avn --delete my/ 192.168.1.130:my/
+同步服务器和本地文件
+rsync -av --delete my/ 192.168.1.130:my/
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>标题</title>
+      <link>place_your_blog_url_here/home/2015/02/18/.html</link>
+      <pubDate>18 Feb 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/home/2015/02/18/</guid>
+      <description>&lt;p&gt;标题&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Grunt-Less插件(1)</title>
@@ -894,48 +952,6 @@ class UserAction extends Action{
         
     &lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>ubuntu-php5.5.9安装mongodb数据库扩展</title>
-      <link>place_your_blog_url_here/2015/01/26/ubuntuphpExt.html</link>
-      <pubDate>26 Jan 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/2015/01/26/ubuntuphpExt</guid>
-      <description>&lt;p&gt;ubuntu-php5.5.9安装mongodb数据库扩展&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;1. wget http://pecl.php.net/get/mongo-1.4.5.tgz
-2. tar zxvf mongo-1.4.5.tgz
-3. cd mongo-1.4.5
-4. phpize(运行此命令生成./configureure)
-5. ./configureure
-6. make
-7. sudo make install( 此地方最好加sudo 用root权限执行。本人就在这个地方卡了很久)
-8. 查找php.ini。在php.ini里加入extension=mongo.so这行
-9.重启apache2 ：service apache2 restart(最好重启一下系统)
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>黄梁一梦</title>
-      <link>place_your_blog_url_here/feeling/2015/01/20/feeling.html</link>
-      <pubDate>20 Jan 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/feeling/2015/01/20/feeling</guid>
-      <description>&lt;p&gt;我欲梦中醉，梦无心醉。
-&lt;img src=&quot;http://aliimg.changba.com/cache/photo/101804501_640_640.jpg&quot; alt=&quot;Alt text&quot; title=&quot;我欲梦中醉，梦无心醉&quot; /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;你诺不离，我定不弃。
-你诺离，请说明理由。
-
-你已离，待峰回路转。
-愿安好！！
-
-安好即可！
-&lt;/code&gt;&lt;/pre&gt;
-
 </description>
     </item>
     

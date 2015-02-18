@@ -1,0 +1,42 @@
+---
+layout: post
+title: linux-ssh-rsync
+categories: home
+---
+{{ page.title}}
+
+##1.ssh登入远程机器
+	
+	xscan@xscan-Aspire-V5-472G:~$ ssh git@192.168.1.130
+	git@192.168.1.130's password: 
+	Linux debian 3.2.0-4-amd64 #1 SMP Debian 3.2.65-1+deb7u1 x86_64
+
+	The programs included with the Debian GNU/Linux system are free software;
+	the exact distribution terms for each program are described in the
+	individual files in /usr/share/doc/*/copyright.
+
+	Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+	permitted by applicable law.
+	Last login: Wed Feb 18 11:26:19 2015 from xscan-aspire-v5-472g.local
+	git@debian:~$
+
+
+##2.ssh密钥上传到服务器
+
+	ssh-keygen
+	一路回车下去
+	cd ~/.ssh
+	进入当前用户目录
+	ssh-copy-id git@192.168.1.130
+	上传密钥到服务器
+
+##3.rsync远程同步备份
+
+	3.1）上传本地文件夹到服务器例子
+	rsync -r mydir git@192.168.1.1:
+
+	3.2）同步本地和服务器中增加删除的文件
+	#检查服务器和本地不同文件的信息（注意：上面的检查嫁了一个"-n"参数）	
+	rsync -avn --delete my/ 192.168.1.130:my/
+	同步服务器和本地文件
+	rsync -av --delete my/ 192.168.1.130:my/

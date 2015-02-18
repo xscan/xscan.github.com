@@ -1,0 +1,6 @@
+---
+layout: post
+title: 标题
+categories: home
+---
+{{ page.title}}
