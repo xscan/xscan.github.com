@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
     <!--[if lte IE 9]><meta http-equiv="refresh" content="0;url=/ie.html"><![endif]-->
 
-    <title>nodejs入门</title>
+    <title>mysql-master-slave</title>
     <meta name="description" content="">
 
     <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
@@ -39,7 +39,7 @@
 
         <nav id="pl__container">
         
-          <a class="home pl__all" href="/home/2015/03/16/nodejs.html"><span class="pl__circle"></span><span class="pl__title">nodejs入门</span><span class="pl__date">Mar 2015</span></a>
+          <a class="home pl__all" href="/home/2015/03/16/nodejs.html"><span class="pl__circle"></span><span class="pl__title">mysql-master-slave</span><span class="pl__date">Mar 2015</span></a>
         
           <a class="home pl__all" href="/home/2015/02/18/linuxssh.html"><span class="pl__circle"></span><span class="pl__title">linux-ssh-rsync</span><span class="pl__date">Feb 2015</span></a>
         
@@ -100,15 +100,147 @@
     <div id="post">
       <div id="pjax">
         <article id="post__content">
-  <h1 id="post__title" data-identifier="20150316">nodejs入门</h1>
-  <p>nodejs入门</p>
+  <h1 id="post__title" data-identifier="20150316">mysql-master-slave</h1>
+  <h1 id="mysql-master-slave">mysql master-slave读写分离</h1>
+
+<h2 id="section">1.配置环境</h2>
+
+<p>ubuntu14.10-server-amd64</p>
+
+<p>Mysql-master:192.168.20.102</p>
+
+<p>Mysql-slave:192.168.20.103</p>
+
+<h2 id="mysql">2.打开mysql的远程访问</h2>
+
+<p>进入mysql命令行执行
+(注解：允许用户myuser从任何主机连接到mysql服务器，并使用mypassword作为密码)</p>
+
+<pre><code>mysql&gt;GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
+</code></pre>
+
+<h2 id="masterslave">3.在master和slave创建同步数据库;</h2>
+
+<p>分别在master和slave中执行</p>
+
+<pre><code>mysql&gt;create database studb;
+mysql&gt;use studb;
+mysql&gt;create table info(id int);
+</code></pre>
+
+<h2 id="master">4.配置master数据库</h2>
+
+<h3 id="mysqlmysqldmysql">1).打开mysql数据库的配置文件，到[mysqld]下添加如下内容（注意：有些配置mysql是默认没有打开的，可以直接去掉注释）</h3>
+
+<pre><code>sudo vi /etc/mysql/my.cnf
+
+[mysqld]
+server-id               = 1
+log_bin                 = /var/log/mysql/mysql-bin.log
+expire_logs_days        = 10
+max_binlog_size         = 100M
+binlog_do_db            = studb
+
+#注释
+第一行:一个server-id(注意次id是唯一的)
+第二行:二进制日志文件存放位置和名字
+第三行: 二进制日志自动删除的天数。默认值为0,表示“没有自动删除”
+第四行:最大数据库日志大小
+第五行:需要同步的数据库名字
+（注意：配置修改保存记得重启mysql服务器让配置生效）
+</code></pre>
+
+<h3 id="section-1">2).创建同步账号</h3>
+<p>在master中进入mysql命令行执行</p>
+
+<pre><code>mysql&gt;grant replication slave,replication client on *.* to 'slave'@'%' identified by '123456';
+</code></pre>
+
+<p>为slave创建一个同步账号</p>
+
+<h3 id="master-1">3).查看master主数据库中的日志文件状态</h3>
+<p>（注意：要记录下File 和Position下面的值，配置slave时候会用到）</p>
+
+<pre><code>    mysql&gt; show master status
+    -&gt; ;
+    +------------------+----------+--------------+------------------+
+    | File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
+    +------------------+----------+--------------+------------------+
+    | mysql-bin.000005 |      695 |              |                  |
+    +------------------+----------+--------------+------------------+
+    1 row in set (0.00 sec)
+</code></pre>
+
+<h2 id="slave">5.配置slave数据库</h2>
+
+<h3 id="master-2">1）.修改配置文件（类似master的配置）</h3>
+
+<pre><code>[mysqld]
+server-id               = 2
+log_bin                 = /var/log/mysql/mysql-bin.log
+expire_logs_days        = 10
+max_binlog_size         = 100M
+replicate-do-db         = studb
+relay_log               = /var/log/mysql/mysql-relay-bin.log
+log_slave_updates       = 1
+read_only               = 1
+
+#注释
+第一行:一个server-id(注意次id是唯一的)
+第二行:二进制日志文件存放位置和名字
+第三行: 二进制日志自动删除的天数。默认值为0,表示“没有自动删除”
+第四行:最大数据库日志大小
+第五行:需要同步的数据库名字
+第六七八行：暂时未知
+（注意：配置修改保存记得重启mysql服务器让配置生效）
+</code></pre>
+
+<h3 id="slave-master">2）.配置slave 同步的master</h3>
+
+<p>进入slave上的Mysql</p>
+
+<pre><code>mysql&gt; change master to
+    -&gt; master_host='192.168.20.102',
+    -&gt; master_user='slave',
+    -&gt; master_password='123456',
+    -&gt; master_log_file='mysql-bin.000005',
+    -&gt; master_log_pos=695;
+</code></pre>
+
+<p>master_log_file,master_log_pos是在master中的数据</p>
+
+<pre><code>  mysql&gt; show master status ;
+  +------------------+----------+--------------+------------------+
+  | File             | Position | Binlog_Do_DB | Binlog_Ignore_DB |
+  +------------------+----------+--------------+------------------+
+  | mysql-bin.000005 |      695 |              |                  |
+  +------------------+----------+--------------+------------------+
+  1 row in set (0.00 sec)
+</code></pre>
+
+<h3 id="salve">3）.启动salve，并查看状态</h3>
+
+<pre><code>mysql&gt;start slave;
+mysql&gt;show slave status\G;
+</code></pre>
+
+<p>查看这两个进程是否运行,如下表示同步成功</p>
+
+<pre><code>Slave_IO_Running: Yes
+Slave_SQL_Running: Yes
+</code></pre>
+
+<p>之后在master服务器插入数据就会同步到slave</p>
+
+<h1 id="section-2">6.小结</h1>
+<p>mysql采用此分布结构可以有效的缓解主服务器的压力，从而实现负载均衡的作用</p>
 
 </article> <!-- end #post__content -->
 
 <div id="post__share">
-  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/home/2015/03/16/nodejs.html&text=nodejs入门" target="_blank"></a>
+  <a id="icon-twitter" class="fontello" href="https://twitter.com/intent/tweet?url=place_your_url_here/home/2015/03/16/nodejs.html&text=mysql-master-slave" target="_blank"></a>
   <a id="icon-cc" class="fontello" href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank"></a>
-  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/home/2015/03/16/nodejs.html&title=nodejs入门" target="_blank"></a>
+  <a id="icon-weibo" class="fontello" href="http://v.t.sina.com.cn/share/share.php?url=place_your_url_here/home/2015/03/16/nodejs.html&title=mysql-master-slave" target="_blank"></a>
 </div> <!-- end #post__share -->
 
 <div id="disqus_thread">

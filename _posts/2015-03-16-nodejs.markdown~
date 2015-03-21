@@ -36,6 +36,7 @@ Mysql-slave:192.168.20.103
 
 ###1).打开mysql数据库的配置文件，到[mysqld]下添加如下内容（注意：有些配置mysql是默认没有打开的，可以直接去掉注释）
 
+
     sudo vi /etc/mysql/my.cnf
 
     [mysqld]
@@ -73,6 +74,7 @@ Mysql-slave:192.168.20.103
         1 row in set (0.00 sec)
 
 ##5.配置slave数据库
+
 ###1）修改配置文件（类似master的配置）
 
     [mysqld]
