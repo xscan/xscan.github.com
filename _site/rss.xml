@@ -6,9 +6,19 @@
     <atom:link href="place_your_blog_url_here/rss.xml" rel="self" type="application/rss+xml" />
     <description>place_your_blog_description_here</description>
     <language>place_your_blog_language_here</language>
-    <pubDate>Wed, 18 Feb 2015 12:32:33 +0800</pubDate>
-    <lastBuildDate>Wed, 18 Feb 2015 12:32:33 +0800</lastBuildDate>
+    <pubDate>Fri, 20 Mar 2015 22:07:11 +0800</pubDate>
+    <lastBuildDate>Fri, 20 Mar 2015 22:07:11 +0800</lastBuildDate>
 
+    
+    <item>
+      <title>nodejs入门</title>
+      <link>place_your_blog_url_here/home/2015/03/16/nodejs.html</link>
+      <pubDate>16 Mar 2015</pubDate>
+      <author>place_your_name_here</author>
+      <guid>place_your_blog_url_here/home/2015/03/16/nodejs</guid>
+      <description>&lt;p&gt;nodejs入门&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>linux-ssh-rsync</title>
@@ -55,16 +65,6 @@ rsync -avn --delete my/ 192.168.1.130:my/
 同步服务器和本地文件
 rsync -av --delete my/ 192.168.1.130:my/
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>标题</title>
-      <link>place_your_blog_url_here/home/2015/02/18/.html</link>
-      <pubDate>18 Feb 2015</pubDate>
-      <author>place_your_name_here</author>
-      <guid>place_your_blog_url_here/home/2015/02/18/</guid>
-      <description>&lt;p&gt;标题&lt;/p&gt;
 </description>
     </item>
     
