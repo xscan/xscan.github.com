@@ -1,0 +1,30 @@
+---
+layout: post
+title: Github--建立网站分支
+categories: home
+---
+
+#1.github里默认gh-pages为项目网站分支。
+
+	1.在本地建立gh-pages分支
+	2.切换分支
+	3.初始化
+	4.加入文件到提交列表
+	5.提交文件
+	6.添加远程推送
+	7.推送到gh分支
+
+	git branch gh-pages
+	git checkout gh-pages
+	git init
+	git add .
+	git commit -m "add"
+	git remote add origin https://github.com/xscan/hello.git
+	git push -u origin gh-pages
+
+
+#2.访问网站
+	上面我们建立的项目网站地址为：https://xscan.github.io/hello
+	我们分解一下
+	https://用户名.github.io/项目名称（仓库名）
+		
