@@ -4,9 +4,8 @@ title: js-Tpl小例子
 categories: html5
 ---
 
-#1.前言
-
-什么是模板引擎，说的简单点，就是一个字符串中有几个变量待定。比如：
+#1.什么是模板引擎
+什么是模板引擎。说的简单点，就是一个字符串中有几个变量待定。比如：
 
 		var tpl = 'Hei, my name is <%name%>, and I\'m <%age%> years old.';
 
@@ -20,9 +19,13 @@ categories: html5
 		})
 		document.write(result)
 
-以上就只有三个操作：
+以上就只有四个操作：
 		
 		 1.模板
 		 2.数据
 		 3.正则替换
 		 4.输出到浏览器
+
+
+		 
+这就是一个最简单的模板引擎了
