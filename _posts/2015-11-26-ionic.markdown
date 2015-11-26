@@ -1,0 +1,23 @@
+---
+layout: post
+title: ionic配置（安装）
+categories: html5
+---
+
+#1.修改npm源（修改为淘宝镜像源）
+    
+	npm config set registry https://registry.npm.taobao.org 
+
+#2.安装ionic和cordova
+
+	cnpm install -g cordova ionic
+
+#3.下载ionic模板（有三套）
+
+我们这边下载一个tabs的模板
+
+	ionic start myApp tabs
+
+#4.项目结构
+
+	www 目录为项目源码，采用angularjs进行开发
