@@ -1,0 +1,41 @@
+---
+layout: post
+title: atom初体验
+categories: home
+---
+{{ page.title}}
+
+
+## 1.简介
+在代码编辑器、文本编辑器领域，有着不少的「神器」级的产品，如历史悠久的
+VIM、Emacs 以及如今当红的 SublimeText。另外还有
+EditPlus、NotePad++、UltraEdit 等一大堆流行的利器，可谓百家争鸣。
+然而，作为目前全球范围内影响力最大的代码仓库/开源社区，GitHub
+的程序员们并不满足于此。他们使用目前最先进流行的技术重新打造了一款称为
+“属于21世纪”的代码编辑器——Atom， 它开源免费跨平台，并且整合 GIT
+并提供类似 SublimeText 的包管理功能，支持插件扩展，可配置性非常高……
+
+Atom编辑器是基于浏览器的，采用nodejs。本地搭建的web的编辑器，下面我们来体验
+一下Atom的一款插件，activate-power-mode 震撼的代码(震的我晕)
+
+## 2.安装Atom
+
+[Atom下载](http://www.iplaysoft.com/atom-editor.html)
+
+## 3.安装activate-power-mode插件
+
+[activate-power-mode插件下载](https://github.com/JoelBesada/activate-power-mode)
+
+之后把下载下来的插件目录复制到用户目录下的 .atom/packages/ 这个目录下。之后执行npm install 安装依赖
+
+
+      注意：在npm的官方源可能被屏蔽，我们可以采用淘宝镜像源
+      1.直接打开命令行
+      npm config set registry https://registry.npm.taobao.org
+
+## 4.开启装逼模式（体验大脑晕晕的感觉）
+
+* 打开atom编辑器
+* 快捷键开启装逼模式ctrl+alt+o      
+或者到菜单栏目点击pageages找到activate-power-mode插件点击Toggle
+开启
