@@ -1,0 +1,51 @@
+---
+layout: post
+title: ionic-android环境搭建
+categories: home
+---
+
+# 1.首先准备工作
+
+下面所用的东西都可以在这里下载
+
+[Android最新SDK内容合集 | 皓眸大前端](http://www.haomou.net/2015/07/21/2015_android/)
+
+    jdk_8u66_windows_i586_8.0.660.18.1448259933.exe
+
+    apache-ant-1.9.6-bin.zip
+
+    android-sdk_r23.0.2-windows.zip
+    android-22_r02.zip
+    build-tools_r19.1-windows.zip
+    platform-tools_r22-windows.zip
+    tools_r23.0.2-windows.zip
+
+# 2.配置java环境变量
+[百度一下啦](http://jingyan.baidu.com/article/f96699bb8b38e0894e3c1bef.html)
+
+难写了网上一大堆
+
+# 3.配置android-sdk环境变量
+
+
+    添加新的环境变量ANDROID_HOME指向android-sdk_r23.0.2-windows.zip解压出来的路径
+
+    例如：O:\android-sdk-windows\
+
+    然后再把ANDROID_HOME添加到系统PATH
+
+    PATH=%ANDROID_HOME%
+
+
+# 4.配置ant环境变量
+apache-ant-1.9.6-bin.zip把里面解压出的bin目录添加到系统PATH
+
+# 5.ionic添加android平台
+
+    ionic platform add android
+
+# 6.编译打包app
+(注意：第一次编译gradle需要下载东西，根据网络环境不同下载的时间也不同)
+ionic build android
+
+编译出来了是不是有点小激动呀！！
