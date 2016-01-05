@@ -35,6 +35,8 @@ categories: home
             }
             return $list;
     }
+
+    
 # 3.模板
 
       	<foreach name="nav" item="vo">
