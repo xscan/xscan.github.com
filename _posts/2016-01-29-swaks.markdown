@@ -1,0 +1,19 @@
+---
+layout: post
+title: swaks发送邮件
+categories: home
+---
+{{ page.title}}
+
+# 1.安装
+
+		apt-get install swaks
+
+
+# 2.命令行发送邮件
+
+		
+		swaks -t touser@qq.com -f from@163.com -s smtp.163.com --auth-user 你的163邮箱帐号 --auth-password 你的163邮箱密码 --body "这是正文"  --header "Subject: 这是标题"
+
+
+那就到这里了。linux 命令行发送邮件
