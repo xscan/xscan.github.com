@@ -1,0 +1,20 @@
+---
+layout: post
+title: threejs
+categories: html5
+---
+
+
+# three入门
+1. 设置three渲染器
+2. 设置相机camera
+3. 设置场景scene
+4. 设置光源light
+5. 设置物体object
+6. 添加相机场景到渲染器
+
+
+先画几十张平面Z不同
+添加图片纹理到平面
+
+
