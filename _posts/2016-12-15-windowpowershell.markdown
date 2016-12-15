@@ -4,7 +4,7 @@ title: "Windows PowerShell初体验"
 categories: home
 ---
 
-##先看效果
+## 先看效果
 
 
     # create new excel instance
@@ -31,7 +31,7 @@ categories: home
 3. 要手动启动PowerShell，可以在开始菜单的搜索框中直接键入PowerShell回车即可）
 简单领略PowerShell的强大之后，下文就从几个方面介绍一下PowerShell相对于以往版本的命令提示符甚至Linux Shell的优势
 
-##调用自定义dll
+## 调用自定义dll
 
 在Windows的世界里，.Net代表着现在和将来，是新生力量。与.Net联姻，就意味着榜上了粗腿，迈上了快车道。号称基于.Net Framework，
 那么使用.Net的基类就易如反掌。基本步骤如下：
@@ -73,7 +73,7 @@ categories: home
 如此容易就能使用.Net的托管程序集，必然为它招徕一大票簇拥。
 
 
-##执行策略限制
+## 执行策略限制
 
 
 Powershell一般初始化情况下都会禁止脚本执行。脚本能否执行取决于Powershell的执行策略。
@@ -90,6 +90,6 @@ Powershell一般初始化情况下都会禁止脚本执行。脚本能否执行�
 
 
 
-##后文
+## 后文
 
-突然发现Windows PowerShell还是很强大的，只要是.net可以做的他都可以做
+突然发现Windows PowerShell还是很强大的，只要是.net可以做的他都可以做，唯一不足的可能就是跨平台的问题了
