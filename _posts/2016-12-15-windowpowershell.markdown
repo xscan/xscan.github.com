@@ -6,6 +6,7 @@ categories: home
 
 ##先看效果
 
+
     # create new excel instance
      $objExcel = New-Object -comobject Excel.Application
      $objExcel.Visible = $True
@@ -24,12 +25,14 @@ categories: home
     $objChart.Chart.ChartType = 70
     $objChart.Chart.ApplyDataLabels(5)
 
+
 1. 这个脚本调用了Excel的COM库。
 2. 当然从命令耦合的角度来看，输出成文本格式更有利，但这个例子主要想说明PowerShell的强大以及微软产品优异的复用性。
 3. 要手动启动PowerShell，可以在开始菜单的搜索框中直接键入PowerShell回车即可）
 简单领略PowerShell的强大之后，下文就从几个方面介绍一下PowerShell相对于以往版本的命令提示符甚至Linux Shell的优势
 
 ##调用自定义dll
+
 在Windows的世界里，.Net代表着现在和将来，是新生力量。与.Net联姻，就意味着榜上了粗腿，迈上了快车道。号称基于.Net Framework，
 那么使用.Net的基类就易如反掌。基本步骤如下：
 1. 添加类所在程序集；
