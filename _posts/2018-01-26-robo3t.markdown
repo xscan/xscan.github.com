@@ -1,0 +1,24 @@
+---
+layout: post
+title: "robo3t出错"
+categories: home
+---
+{{ page.title}}
+
+
+### 1.错误提示
+    ubuntu@ubuntu-B150MD-PRO-D4:~/下载/robo3t-1.1.1-linux-x86_64-c93c6b0/bin$ ./robo3t
+    This application failed to start because it could not find or load the Qt platform plugin "xcb"
+    in "".
+
+    Available platform plugins are: xcb.
+
+    Reinstalling the application may fix this problem.
+    已放弃 (核心已转储)
+
+### 2.解决问题
+把下载的robo3t根目录下把 liblibstdc++.so.* 这一链接库移除即可
+代码如下
+
+
+    ubuntu@ubuntu-B150MD-PRO-D4:~/下载/robo3t-1.1.1-linux-x86_64-c93c6b0$ mkdir robo3t-bak && mv ./lib/libstdc++.so.* ./robo3t-bak/
