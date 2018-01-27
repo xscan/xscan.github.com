@@ -15,12 +15,13 @@ if ($(window).width() <= 1280) {
     tag2       = $('.home'),
     tag3       = $('.html5'),
     tag4       = $('.softks'),
-    tag5       = $('.feeling'),
-    tag6       = $('.place_your_tag_name_here');
+    tag5       = $('.tools'),
+    tag6       = $('.feeling');
 var sidebar    = $('#sidebar'),
     container  = $('#post'),
     content    = $('#pjax'),
     button     = $('#icon-arrow');
+
 
 // Tags switcher
 var clickHandler = function(k) {
