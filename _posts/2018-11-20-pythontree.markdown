@@ -15,7 +15,7 @@ categories:  tools
 - 对任何一棵二叉树T，如果其终端结点数为N0，度为2的结点数为N2，则N0=N2+1
 
 ### 2.二叉树实现
-####1. 定义节点类
+#### 1. 定义节点类
 
 ```python
 class Node:
@@ -24,7 +24,7 @@ class Node:
         self.childl = None
         self.childr = None
 ```
-####2. 定义树类
+#### 2. 定义树类
 ```python
 
 class Tree(object):
