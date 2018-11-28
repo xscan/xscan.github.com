@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "python+selenium爬取58租房信息分析-（一）数据爬取"
-categories:  
+categories: tools,python
 ---
 {{ page.title}}
 ##技术储备
