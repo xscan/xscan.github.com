@@ -1,9 +1,11 @@
 ---
 layout: post
-title: "python可视化分析58租房信息（一）数据爬取"
+title: "python可视化分析58租房信息（一）"
 categories: tools,python
 ---
 {{ page.title}}
+
+# （一）数据爬取
 ## 技术储备
 [Selenium中文文档](https://selenium-python-zh.readthedocs.io/en/latest/)
 [Beautifulsoup中文文档](https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/#id)
