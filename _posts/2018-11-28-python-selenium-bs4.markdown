@@ -4,7 +4,7 @@ title: "python+selenium爬取58租房信息分析-（一）数据爬取"
 categories: tools,python
 ---
 {{ page.title}}
-##技术储备
+## 技术储备
 [Selenium中文文档](https://selenium-python-zh.readthedocs.io/en/latest/)
 [Beautifulsoup中文文档](https://beautifulsoup.readthedocs.io/zh_CN/v4.4.0/#id)
 [Matplotlib教程](https://www.cnblogs.com/duye/p/8862666.html)
@@ -13,7 +13,7 @@ categories: tools,python
 - Selenium+bs4(爬取页面+解析页面数据)
 - pandas+matplotlib(分析数据+可视化数据)
 
-##1.通用流程分析
+## 1.通用流程分析
 1. 爬取信息
 2. 数据清洗
     2.1 无效数据清洗
@@ -22,12 +22,12 @@ categories: tools,python
 4. 数据可视化
 
 
-##2.需求分析
+## 2.需求分析
 - 爬取58同城租房信息(由于58同城采用cookie来获取数据，我们采用selenium +bs4来爬取数据)
 - 通过pandas清洗、分析数据
 - 通过matplotlib数据可视化分析
 
-##3.爬取数据(实例代码)
+## 3.爬取数据(实例代码)
 ```python
 #coding:utf-8
 from selenium import webdriver
