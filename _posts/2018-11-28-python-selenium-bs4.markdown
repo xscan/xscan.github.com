@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "python+selenium爬取58租房信息分析-（一）数据爬取"
+title: "python可视化分析58租房信息（一）数据爬取"
 categories: tools,python
 ---
 {{ page.title}}
