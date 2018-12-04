@@ -22,6 +22,7 @@ primarykey.to_csv('./data.csv')
 
 ## 2.数据分析
 
+![可视化图片](/assets/img/Figure_1.png)
 我们来统计`暮云地区租房`和`最多房源的地区`和`平均价格最高的前5个地区`代码如下
 
 ```python
