@@ -17,7 +17,7 @@ categories:
 |docker images|列出所有镜像|
 |docker image rm 镜像id或者名称|删除镜像|
 |docker build -t 镜像名称 .|编译根据Dockerfile编译镜像|
-|docker tag 源镜像[:TAG] 目标镜像[:TAG] |列出所有镜像|
+|docker tag 源镜像[:TAG] 目标镜像[:TAG] |给镜像打标签|
 
 运行镜像
 
