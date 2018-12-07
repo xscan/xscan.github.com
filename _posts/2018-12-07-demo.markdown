@@ -1,0 +1,15 @@
+---
+layout: post
+title: "github slide 测试"
+categories:  
+---
+{{ page.title}}
+
+<!-- slide -->
+page1
+
+<!-- slide -->
+page2
+
+<!-- slide -->
+page3
