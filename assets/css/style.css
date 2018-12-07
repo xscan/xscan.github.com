@@ -352,9 +352,10 @@ a {
 #post {
   height: 100%;
   color: #2c353d;
+  background: #f8f8f8;
   font-size: 18px;
   line-height: 1.5;
-  background: white;
+  /* background: white; */
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
