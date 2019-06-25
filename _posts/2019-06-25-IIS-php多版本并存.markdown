@@ -1,0 +1,78 @@
+---
+layout: post
+title: "IIS-php多版本并存"
+categories: tools,php
+---
+
+{{ page.title}}
+
+### 1.问题来源
+
+需要在 win 服务器下部署不同版本的 php 项目
+
+### 2.IIS 并存 PHP 多版本的配置
+
+在 IIS 项目根目录下建立`web.config`文件，复制以下内容到文件中。保存即可
+
+```xml linenos
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+<rewrite>
+ <rules>
+ <rule name="OrgPage" stopProcessing="true">
+ <match url="^(.*)$" />
+ <conditions logicalGrouping="MatchAll">
+ <add input="{HTTP_HOST}" pattern="^(.*)$" />
+ <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+ <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+ </conditions>
+ <action type="Rewrite" url="index.php/{R:1}" />
+ </rule>
+ </rules>
+ </rewrite>
+        <defaultDocument>
+            <files>
+                <add value="index.php" />
+            </files>
+        </defaultDocument>
+        <handlers>
+            <remove name="phpStudy2018_FastCGI" />
+            <remove name="php5.4" />
+            <add name="php5.4" path="*.php" verb="*" modules="FastCgiModule" scriptProcessor="C:\phpStudy\PHPTutorial\php\php-7.1.13-nts\php-cgi.exe" resourceType="Either" requireAccess="Script" />
+        </handlers>
+        <httpErrors errorMode="Detailed" />
+    </system.webServer>
+</configuration>
+```
+
+### 3.配置解释
+1. 这配置为重写路由
+```xml
+<rewrite>
+ <rules>
+ <rule name="OrgPage" stopProcessing="true">
+ <match url="^(.*)$" />
+ <conditions logicalGrouping="MatchAll">
+ <add input="{HTTP_HOST}" pattern="^(.*)$" />
+ <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+ <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+ </conditions>
+ <action type="Rewrite" url="index.php/{R:1}" />
+ </rule>
+ </rules>
+ </rewrite>
+ ```
+
+2. 删除原有php版本，然后在添加一个你需要版本的php。例如我这边需要php7.1.13配置如下：
+- `name`只是代表名称
+- `path`解析通配符
+-  `modules`解析模式
+- `scriptProcessor`PHP脚本解析器
+```xml
+<handlers>
+    <remove name="phpStudy2018_FastCGI" />
+    <remove name="php5.4" />
+    <add name="php7.1.13" path="*.php" verb="*" modules="FastCgiModule" scriptProcessor="C:\phpStudy\PHPTutorial\php\php-7.1.13-nts\php-cgi.exe" resourceType="Either" requireAccess="Script" />
+</handlers>
+```
