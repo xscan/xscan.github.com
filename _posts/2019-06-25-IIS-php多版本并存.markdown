@@ -4,8 +4,6 @@ title: "IIS-php多版本并存"
 categories: tools,php
 ---
 
-
-
 ### 1.问题来源
 
 需要在 win 服务器下部署不同版本的 php 项目
@@ -14,7 +12,7 @@ categories: tools,php
 
 在 IIS 项目根目录下建立`web.config`文件，复制以下内容到文件中。保存即可
 
-```xml linenos
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <system.webServer>
@@ -45,22 +43,21 @@ categories: tools,php
     </system.webServer>
 </configuration>
 ```
-
 ### 3.配置解释
 1. 这配置为重写路由
 ```xml
 <rewrite>
- <rules>
- <rule name="OrgPage" stopProcessing="true">
- <match url="^(.*)$" />
- <conditions logicalGrouping="MatchAll">
- <add input="{HTTP_HOST}" pattern="^(.*)$" />
- <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
- <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
- </conditions>
- <action type="Rewrite" url="index.php/{R:1}" />
- </rule>
- </rules>
+    <rules>
+    <rule name="OrgPage" stopProcessing="true">
+        <match url="^(.*)$" />
+        <conditions logicalGrouping="MatchAll">
+            <add input="{HTTP_HOST}" pattern="^(.*)$" />
+            <add input="{REQUEST_FILENAME}" matchType="IsFile" negate="true" />
+            <add input="{REQUEST_FILENAME}" matchType="IsDirectory" negate="true" />
+        </conditions>
+        <action type="Rewrite" url="index.php/{R:1}" />
+    </rule>
+    </rules>
  </rewrite>
  ```
 
@@ -69,6 +66,7 @@ categories: tools,php
 - `path`解析通配符
 -  `modules`解析模式
 - `scriptProcessor`PHP脚本解析器
+
 ```xml
 <handlers>
     <remove name="phpStudy2018_FastCGI" />
@@ -76,3 +74,4 @@ categories: tools,php
     <add name="php7.1.13" path="*.php" verb="*" modules="FastCgiModule" scriptProcessor="C:\phpStudy\PHPTutorial\php\php-7.1.13-nts\php-cgi.exe" resourceType="Either" requireAccess="Script" />
 </handlers>
 ```
+{{ post.date|date_to_string }}
