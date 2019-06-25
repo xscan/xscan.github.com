@@ -3,7 +3,7 @@ layout: post
 title: "mongodb数据去重"
 categories: home
 ---
-{{ page.title}}
+
 
 ### 1.建立唯一索引 去除数据库中重复值
 

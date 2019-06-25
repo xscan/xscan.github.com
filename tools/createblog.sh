@@ -16,7 +16,7 @@ layout: post
 title: "$2"
 categories: $3 
 ---
-{{ page.title}}
+
 
 EOF
 }

@@ -3,7 +3,7 @@ layout: post
 title: css3学习历程
 categories: html5
 ---
-{{ page.title}}
+
 #最近发现css3逐渐强大了。还支持动画、和圆角的属性。
 ##1.圆角（直接上例子）
 ##代码如下：

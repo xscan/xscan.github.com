@@ -3,7 +3,7 @@ layout: post
 title: "eslint检测代码风格"
 categories: tools 
 ---
-{{ page.title}}
+
 
 链接如下
 [vscode eslint使用链接](https://www.cnblogs.com/IPrograming/p/VsCodeESLint.html)

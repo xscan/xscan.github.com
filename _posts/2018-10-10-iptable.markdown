@@ -3,7 +3,7 @@ layout: post
 title: "iptables基本使用"
 categories: linux
 ---
-{{ page.title}}
+
 
 
 ## 1.查看iptables信息

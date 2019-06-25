@@ -3,7 +3,7 @@ layout: post
 title: "ubuntu16.04图形界面错误"
 categories: all 
 ---
-{{ page.title}}
+
 
 Ubuntu系统启动报错：The system is running in low-graphics mode
 

@@ -3,7 +3,7 @@ layout: post
 title: ubuntu-php5.5.9安装mongodb数据库扩展
 categories: 
 ---
-{{ page.title}}
+
 
 	1. wget http://pecl.php.net/get/mongo-1.4.5.tgz
 	2. tar zxvf mongo-1.4.5.tgz

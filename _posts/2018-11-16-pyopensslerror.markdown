@@ -3,7 +3,7 @@ layout: post
 title: "python pip openssl 错误"
 categories:  
 ---
-{{ page.title}}
+
 
 删除python openssl库重新安装即可
 ### 1.删除库

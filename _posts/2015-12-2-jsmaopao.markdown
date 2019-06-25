@@ -3,7 +3,7 @@ layout: post
 title: js冒泡
 categories: home
 ---
-{{ page.title}}
+
 
 javascript, jquery的事件中都存在事件冒泡和事件捕获的问题，下面将两种问题及其解决方案做详细总结。
 

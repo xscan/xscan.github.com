@@ -3,7 +3,7 @@ layout: post
 title: js/jq获取常用网页高度宽度
 categories: home
 ---
-{{ page.title}}
+
 
 ##javascript:
 

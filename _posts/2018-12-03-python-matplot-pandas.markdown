@@ -3,7 +3,7 @@ layout: post
 title: "python可视化分析58租房信息（二）"
 categories:  
 ---
-{{ page.title}}
+
 
 ## 1.数据去重
 ```python

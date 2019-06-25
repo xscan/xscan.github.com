@@ -2,7 +2,7 @@
 layout: post
 title: "php读取sql数据库中的值"
 ---
-{{ page.title}}
+
 
 {% highlight php %}
 <?php

@@ -3,7 +3,7 @@ layout: post
 title: "第八章 数据结构总结"
 categories:  softks
 ---
-{{ page.title}}
+
 
 - 8.1 线性结构
     - 线性表（完成单链表和双向链表的建立）

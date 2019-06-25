@@ -3,7 +3,7 @@ layout: post
 title: "browsersync省时的浏览器同步测试工具"
 categories: tools
 ---
-{{ page.title}}
+
 
 ### [browser-sync官网](www.browsersync.cn/)
 

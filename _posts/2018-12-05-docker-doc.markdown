@@ -3,7 +3,7 @@ layout: post
 title: "Docker 速查手册"
 categories:  
 ---
-{{ page.title}}
+
 最近在学习Dcker总结了一下命令如下
 
 ### 1.镜像篇

@@ -3,7 +3,7 @@ layout: post
 title: "html5 事件监听"
 categories: html5
 ---
-{{ page.title}}
+
 <html>
 	<head>
 		<title>方框移动，事件监听</title>

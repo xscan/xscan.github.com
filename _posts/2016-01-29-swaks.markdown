@@ -3,7 +3,7 @@ layout: post
 title: swaks发送邮件
 categories: home
 ---
-{{ page.title}}
+
 
 # 1.安装
 

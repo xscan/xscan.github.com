@@ -3,7 +3,7 @@ layout: post
 title: SqlJoin图解
 categories: home
 ---
-{{ page.title}}
+
 
 ##以下是Sql Join 用法想对应的集合图
 

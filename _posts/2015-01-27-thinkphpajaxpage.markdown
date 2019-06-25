@@ -3,7 +3,7 @@ layout: post
 title: thinkphpajax分页
 categories: 
 ---
-{{ page.title}}
+
 Thinkphp目录的Lib\ORG\Util\目录里新建AjaxPage.class.php,写入一下内容：
 
     <?php

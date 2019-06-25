@@ -3,7 +3,7 @@ layout: post
 title: "python可视化分析58租房信息（一）"
 categories: tools,python
 ---
-{{ page.title}}
+
 
 # （一）数据爬取
 ## 技术储备

@@ -3,7 +3,7 @@ layout: post
 title: "python 简单二叉树实现"
 categories:  tools
 ---
-{{ page.title}}
+
 
 ### 1.二叉树理解
 

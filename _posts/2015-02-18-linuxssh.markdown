@@ -3,7 +3,7 @@ layout: post
 title: linux-ssh-rsync
 categories: home
 ---
-{{ page.title}}
+
 
 ##1.ssh登入远程机器
 	

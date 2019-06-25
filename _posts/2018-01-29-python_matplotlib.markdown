@@ -3,7 +3,7 @@ layout: post
 title: "python3 matplotlib中文显示"
 categories: tools
 ---
-{{ page.title}}
+
 
 ## 1.修改matplotlib文件
 自己电脑测试可行：平台：windows,python2.7

@@ -3,7 +3,7 @@ layout: post
 title: "为Oracle VM 下linux虚拟机添加新硬盘"
 categories:  
 ---
-{{ page.title}}
+
 
 ##  1.原因
 由于开始创建虚拟机指定的10G系统盘大小，之后使用发现里面空间不够用了，需要在虚拟机里的Ubuntu 添加新的硬盘，由此有了此文

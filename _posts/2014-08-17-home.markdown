@@ -3,7 +3,7 @@ layout: post
 title: "搭建blog的路"
 categories: home
 ---
-{{ page.title}}
+
 
 
 #1.注册githun账户

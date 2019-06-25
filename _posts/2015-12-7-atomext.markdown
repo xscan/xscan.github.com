@@ -3,7 +3,7 @@ layout: post
 title: atom初体验
 categories: home
 ---
-{{ page.title}}
+
 
 
 ## 1.简介

@@ -3,7 +3,7 @@ layout: post
 title: "python Flask框架例子"
 categories:  
 ---
-{{ page.title}}
+
 
 ## 1.Flask入门例子
 安装`pip install flask`

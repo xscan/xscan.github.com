@@ -3,7 +3,7 @@ layout: post
 title: "html5梦工厂(资源)"
 categories: html5
 ---
-{{ page.title}}
+
 
 - [12个Web设计师必备的Bootstrap工具](http://www.html5dw.com/12%E4%B8%AAweb%E8%AE%BE%E8%AE%A1%E5%B8%88%E5%BF%85%E5%A4%87%E7%9A%84bootstrap%E5%B7%A5%E5%85%B7/)
 

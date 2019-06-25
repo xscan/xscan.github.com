@@ -3,7 +3,7 @@ layout: post
 title: "npm 代理和仓库设置"
 categories: html5
 ---
-{{ page.title}}
+
 
 ## npm更新到最新版本
 

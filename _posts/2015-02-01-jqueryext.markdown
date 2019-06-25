@@ -3,7 +3,7 @@ layout: post
 title: jQuery开发插件
 categories: javascript5
 ---
-{{ page.title}}
+
 
 #一、入门
 编写一个jQuery插件开始于给jQuery.fn加入​​新的功能属性，此处添加的对象属性的名称就是你插件的名称：

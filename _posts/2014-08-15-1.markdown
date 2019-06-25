@@ -2,7 +2,7 @@
 layout: post
 title: python socket tcp简单实例
 ---
-{{ page.title}}
+
 
 服务端：
 {% highlight python %}

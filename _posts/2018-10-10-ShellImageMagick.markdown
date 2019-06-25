@@ -3,7 +3,7 @@ layout: post
 title: "Shell-ImageMagick批量转换图片"
 categories:  
 ---
-{{ page.title}}
+
 
 
 ## 1.场景描述

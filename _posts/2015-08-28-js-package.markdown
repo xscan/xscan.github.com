@@ -3,7 +3,7 @@ layout: post
 title: javascript封装实例
 categories: home
 ---
-{{ page.title}}
+
 		
 
 		//函数模块化

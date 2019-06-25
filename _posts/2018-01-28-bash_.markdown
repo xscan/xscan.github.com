@@ -4,7 +4,7 @@ title: LinuxShell!上一条命令参数用法
 categories: tools
 ---  
 
-{{ page.title}}
+
 
 
 * [1.linux终端获取上一条命令参数](#1linux终端获取上一条命令参数 )

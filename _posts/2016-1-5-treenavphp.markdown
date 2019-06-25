@@ -3,7 +3,7 @@ layout: post
 title: thinkpphp二级菜单
 categories: home
 ---
-{{ page.title}}
+
 # 1.sql数据表
       DROP TABLE IF EXISTS `nav`;
       CREATE TABLE `nav` (

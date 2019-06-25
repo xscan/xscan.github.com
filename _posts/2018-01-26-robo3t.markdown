@@ -3,7 +3,7 @@ layout: post
 title: "robo3t出错"
 categories: home
 ---
-{{ page.title}}
+
 
 
 ### 1.错误提示

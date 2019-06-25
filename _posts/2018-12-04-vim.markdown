@@ -3,7 +3,7 @@ layout: post
 title: "vim 例子"
 categories:  
 ---
-{{ page.title}}
+
 
 ## 1.前言
 先上一张图让大家了解一下

@@ -3,7 +3,7 @@ layout: post
 title: nodejs第一个例子
 categories: 
 ---
-{{ page.title}}
+
 
 ##用git下载node.js最新版
 

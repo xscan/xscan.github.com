@@ -3,7 +3,7 @@ layout: post
 title: "软件设计师考试(一)"
 categories: softks
 ---
-{{ page.title}}
+
 
 # 第一章 计算机系统知识
 

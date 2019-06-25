@@ -3,7 +3,7 @@ layout: post
 title: "pandas速查手册"
 categories: tools,python
 ---
-{{ page.title}}
+
 
 ## 1.前言
 对于数据科学家，无论是数据分析还是数据挖掘来说，Pandas是一个非常重要的Python包。它不仅提供了很多方法，使得数据处理非常简单，同时在数据处理速度上也做了很多优化，使得和Python内置方法相比时有了很大的优势。

@@ -3,7 +3,7 @@ layout: post
 title: "MARKDOWN"
 categories: html5
 ---
-{{ page.title}}
+
 
 
 # 为什么使用 Markdown
