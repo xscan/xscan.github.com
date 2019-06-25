@@ -7,7 +7,7 @@ if [ $# -gt 2 ];then
 echo "cans 2"
 fi
 }
-function createPorts (){
+function createPosts (){
 datetime=`date -d today +"%Y-%m-%d-"`
 #cat > $datetime$1.markdown << EOF
 cat > ../_posts/$datetime$1.markdown << EOF
@@ -22,7 +22,7 @@ EOF
 }
 
 if [ x$1 != x ];then
-createPorts $1 $2 $3
+createPosts $1 $2 $3
 else 
 echo "create 文件名 标题 类别";  
 fi
